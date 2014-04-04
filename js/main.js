@@ -1,488 +1,13 @@
 
-$(document).ready(function() {
+var App = (function (response) {
 
   var $broker = $({});
 
   var config = {
-    frets : 12,
-    scales : [{
-      name : 'The Jimmy scale',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10
-      }
-    },{
-      name : 'Wills scale',
-      notes : {
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Ionian',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Dorian',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Phrygian',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Mixolydian',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Lydian',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "6" : 6,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Aeolian',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Locrian',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "5" : 5,
-        "6" : 6,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Melodic Minor',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Dorian b2',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Lydian #5',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "6" : 6,
-        "8" : 8,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Lydian Dominant',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "6" : 6,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Mixolydian b6',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-     name : 'Aeolian b5',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Super Locrian',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "4" : 4,
-        "6" : 6,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Harmonic Minor',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Locrian #6',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "4" : 4,
-        "6" : 6,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Ionian #5',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "8" : 8,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Dorian #4',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "6" : 6,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Phrygian Dominant',
-      notes : {
-        "1" : 1,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Lydian #2',
-      notes : {
-        "3" : 3,
-        "4" : 4,
-        "6" : 6,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Ultra Locrian',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "4" : 4,
-        "6" : 6,
-        "8" : 8,
-        "9" : 9,
-        "12" : 12
-      }
-    },{
-      name : 'Whole Tone',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "6" : 6,
-        "8" : 8,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Half Whole',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "4" : 4,
-        "6" : 6,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Whole Half',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "6" : 6,
-        "8" : 8,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Blues scale',
-      notes : {
-        "3" : 3,
-        "5" : 5,
-        "6" : 6,
-        "7" : 7,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Major b9 Blues Shape 2',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "4" : 4,
-        "7" : 7,
-        "9" : 9,
-        "12" : 12,
-      }
-    },{
-      name : 'Blues Shape 3',
-      notes : {
-        "1" : 1,
-        "2" : 2,
-        "5" : 5,
-        "7" : 7,
-        "10" : 10,
-        "12" : 12
-      }
-    },{
-      name : 'Bebop Minor Hexatonic Blues Shape 4',
-      notes : {
-        "3" : 3,
-        "5" : 5,
-        "8" : 8,
-        "10" : 10,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Blues Shape 5 Bebop  Major Hexatonic',
-      notes : {
-        "2" : 2,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "9" : 9,
-        "12" : 12
-      }
-    },{
-      name : 'Bebop Minor',
-      notes : {
-        "2" : 2,
-        "3" : 3,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "10" : 10,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Major Bebop Scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "8" : 8,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Bebop Dominant',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Wills scale',
-      notes : {
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'The Jimmy scale',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Wills scale',
-      notes : {
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'The Jimmy scale',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'Major scale',
-      notes : {
-        "2" : 2,
-        "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    }]
+    frets : 12
   };
+
+  config.scales = response;
 
   var $body = $('body'),
         $fretBoard = $body.find('#fret-board');
@@ -518,11 +43,11 @@ $(document).ready(function() {
       var self = this;
       $broker.on('interval:selected', function (e) {
         self.addSelection(e.interval);
-        self.filterResults();
+        self.filterResults(e.element);
       });
       $broker.on('interval:removed', function (e) {
         self.removeSelection(e.interval);
-        self.filterResults();
+        self.filterResults(e.element);
       });
       $broker.on('selection:selected', function (e) {
         self.highlightSelection(e.notes);
@@ -594,7 +119,7 @@ $(document).ready(function() {
 
     };
 
-    this.filterResults = function () {
+    this.filterResults = function ($element) {
 
       var self = this;
 
@@ -619,7 +144,7 @@ $(document).ready(function() {
         return selections;
       }
 
-      if(this.highlighting) {
+      if(this.highlighting && !$element.hasClass('highlight')) {
         this.clearClass('highlight');
         this.highlighting = false;
       }
@@ -730,7 +255,8 @@ $(document).ready(function() {
         this.selected = false;
         $broker.trigger({
           type : 'interval:removed',
-          interval : this.iterator
+          interval : this.iterator,
+          element : this.$el
         });
         return;
       }
@@ -738,7 +264,8 @@ $(document).ready(function() {
       this.selected = true;
       $broker.trigger({
         type : 'interval:selected',
-        interval : this.iterator
+        interval : this.iterator,
+        element : this.$el
       });
     };
 
@@ -797,4 +324,14 @@ $(document).ready(function() {
   var fretBoard = $.extend(new View($fretBoard), new FretBoard());
   fretBoard.init();
 
+});
+
+$(document).ready(function() {
+  $.ajax({
+    url : '/js/scales.json',
+    method : 'GET',
+    success : function (response) {
+      new App(response);
+    }
+  });
 });

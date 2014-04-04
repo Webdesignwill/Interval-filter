@@ -89,7 +89,7 @@ button:hover {
   text-align:center;
 }
 .scale .fret-board li:hover {
-  background:#E5FFFE;
+  background:#C6FFFE;
   cursor: pointer;
 }
 .scale .fret-board li:hover .interval{
@@ -120,7 +120,7 @@ button:hover {
   background:#F4FFFF;
 }
 .results li.result:hover {
-  background:#E5FFFE;
+  background:#C6FFFE;
 }
 .results ul {
   content:"";
