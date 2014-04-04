@@ -6,7 +6,23 @@ $(document).ready(function() {
   var config = {
     frets : 12,
     scales : [{
-      name : 'Major scale',
+      name : 'The Jimmy scale',
+      notes : {
+        "1" : 1,
+        "3" : 3,
+        "7" : 7,
+        "9" : 9,
+        "10" : 10
+      }
+    },{
+      name : 'Wills scale',
+      notes : {
+        "9" : 9,
+        "11" : 11,
+        "12" : 12
+      }
+    },{
+      name : 'Ionian',
       notes : {
         "2" : 2,
         "4" : 4,
@@ -17,7 +33,7 @@ $(document).ready(function() {
         "12" : 12
       }
     },{
-      name : 'Minor scale',
+      name : 'Aeolian',
       notes : {
         "2" : 2,
         "3" : 3,
@@ -26,22 +42,6 @@ $(document).ready(function() {
         "8" : 8,
         "10" : 10,
         "12" : 12
-      }
-    },{
-      name : 'Wills scale',
-      notes : {
-        "9" : 9,
-        "11" : 11,
-        "12" : 12
-      }
-    },{
-      name : 'The Jimmy scale',
-      notes : {
-        "1" : 1,
-        "3" : 3,
-        "7" : 7,
-        "9" : 9,
-        "10" : 10
       }
     },{
       name : 'Lydian',
@@ -220,47 +220,47 @@ $(document).ready(function() {
         "11" : 11
       }
     },{
-      name : 'Major scale',
+      name : 'Super Locrian',
       notes : {
-        "2" : 2,
+        "1" : 1,
+        "3" : 3,
         "4" : 4,
-        "5" : 5,
-        "7" : 7,
-        "9" : 9,
-        "11" : 11,
+        "6" : 6,
+        "8" : 8,
+        "10" : 10,
         "12" : 12
       }
     },{
-      name : 'Major scale',
+      name : 'Ultra Locrian',
       notes : {
-        "2" : 2,
+        "1" : 1,
+        "3" : 3,
         "4" : 4,
-        "5" : 5,
-        "7" : 7,
+        "6" : 6,
+        "8" : 8,
         "9" : 9,
-        "11" : 11,
         "12" : 12
       }
     },{
-      name : 'balls',
+      name : 'Phrygian Dominant',
       notes : {
-        "2" : 2,
+        "1" : 1,
         "4" : 4,
         "5" : 5,
         "7" : 7,
-        "9" : 9,
-        "11" : 11,
+        "8" : 8,
+        "10" : 10,
         "12" : 12
       }
     },{
-      name : 'Major scale',
+     name : 'Aeolian b5',
       notes : {
         "2" : 2,
-        "4" : 4,
+        "3" : 3,
         "5" : 5,
         "7" : 7,
-        "9" : 9,
-        "11" : 11,
+        "8" : 8,
+        "10" : 10,
         "12" : 12
       }
     },{
