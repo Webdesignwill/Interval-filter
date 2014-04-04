@@ -224,7 +224,7 @@ $(document).ready(function() {
         "12" : 12
       }
     },{
-      name : 'Major scale',
+      name : 'balls',
       notes : {
         "2" : 2,
         "4" : 4,
