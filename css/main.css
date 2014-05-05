@@ -131,3 +131,6 @@ button:hover {
   float:left;
   margin-right:5px;
 }
+.result-count-text {
+  display:none;
+}

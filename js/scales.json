@@ -6,14 +6,16 @@
     "7" : 7,
     "9" : 9,
     "10" : 10
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Wills scale",
   "notes" : {
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Ionian",
   "notes" : {
@@ -24,7 +26,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Dorian",
   "notes" : {
@@ -35,7 +38,8 @@
     "9" : 9,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Phrygian",
   "notes" : {
@@ -46,7 +50,8 @@
     "8" : 8,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Mixolydian",
   "notes" : {
@@ -57,7 +62,8 @@
     "9" : 9,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Lydian",
   "notes" : {
@@ -68,7 +74,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Aeolian",
   "notes" : {
@@ -79,7 +86,8 @@
     "8" : 8,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Locrian",
   "notes" : {
@@ -134,7 +142,8 @@
     "9" : 9,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Mixolydian b6",
   "notes" : {
@@ -145,7 +154,8 @@
     "8" : 8,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
  "name" : "Aeolian b5",
   "notes" : {
@@ -200,7 +210,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Dorian #4",
   "notes" : {
@@ -211,7 +222,8 @@
     "9" : 9,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Phrygian Dominant",
   "notes" : {
@@ -233,7 +245,8 @@
     "9" : 9,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Ultra Locrian",
   "notes" : {
@@ -244,7 +257,8 @@
     "8" : 8,
     "9" : 9,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Whole Tone",
   "notes" : {
@@ -266,7 +280,8 @@
     "9" : 9,
     "10" : 10,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Whole Half",
   "notes" : {
@@ -278,7 +293,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Blues scale",
   "notes" : {
@@ -318,7 +334,8 @@
     "10" : 10,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Blues Shape 5 Bebop  Major Hexatonic",
   "notes" : {
@@ -328,7 +345,8 @@
     "8" : 8,
     "9" : 9,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Bebop Minor",
   "notes" : {
@@ -340,7 +358,8 @@
     "10" : 10,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Major Bebop Scale",
   "notes" : {
@@ -371,7 +390,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "The Jimmy scale",
   "notes" : {
@@ -380,7 +400,20 @@
     "7" : 7,
     "9" : 9,
     "10" : 10
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
+},{
+  "name" : "Major scale",
+  "notes" : {
+    "2" : 2,
+    "4" : 4,
+    "5" : 5,
+    "7" : 7,
+    "9" : 9,
+    "11" : 11,
+    "12" : 12
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Major scale",
   "notes" : {
@@ -413,25 +446,16 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
-},{
-  "name" : "Major scale",
-  "notes" : {
-    "2" : 2,
-    "4" : 4,
-    "5" : 5,
-    "7" : 7,
-    "9" : 9,
-    "11" : 11,
-    "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Wills scale",
   "notes" : {
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "The Jimmy scale",
   "notes" : {
@@ -451,7 +475,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Major scale",
   "notes" : {
@@ -462,7 +487,8 @@
     "9" : 9,
     "11" : 11,
     "12" : 12
-  }
+  },
+  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
 },{
   "name" : "Major scale",
   "notes" : {

@@ -37,7 +37,8 @@ var App = (function (response) {
       this.$fretBoard = this.$el.find('.fret-board');
       this.$clearHighlighting = this.$el.parent().find('.clear-highlighting');
       this.$clearSelection = this.$el.parent().find('.clear-selection');
-      this.$resultCount = this.$el.parent().find('.result-count');
+      this.$resultCountText = this.$el.parent().find('.result-count-text');
+      this.$resultCount = this.$resultCountText.find('.result-count');
     };
 
     this.setEvents = function () {
@@ -201,7 +202,13 @@ var App = (function (response) {
         }
       }
 
-      this.$resultCount.html(resultCount);
+      if(resultCount > 0) {
+        this.$resultCountText.show();
+        this.$resultCount.html(resultCount);
+      } else {
+        this.$resultCountText.hide();
+      }
+
       this.$el.closest('#scale').find('#results').html(docFrag);
 
     };
