@@ -10,7 +10,8 @@ var App = (function (response) {
   config.scales = response;
 
   var $body = $('body'),
-        $fretBoard = $body.find('#fret-board');
+        $fretBoard = $body.find('#fret-board'),
+        $selectionDescription = $body.find('#selection-description');
 
   var View = function ($element) {
     this.$el = $element;
@@ -51,8 +52,8 @@ var App = (function (response) {
         self.removeSelection(e.interval);
         self.filterResults(e.element);
       });
-      $broker.on('selection:selected', function (e) {
-        self.highlightSelection(e.notes);
+      $broker.on('scale:selected', function (e) {
+        self.highlightSelection(e.scale.notes);
       });
       this.$clearHighlighting.on('click', function (e) {
         e.preventDefault();
@@ -66,6 +67,9 @@ var App = (function (response) {
         self.clearClass('selected', true);
         self.removeAllSelections();
         self.filterResults();
+
+        $broker.trigger('selection:cleared');
+
       });
     };
 
@@ -140,16 +144,18 @@ var App = (function (response) {
           selections.push({
             match : scale.notes[selection] ? true : false,
             name : scale.name,
-            notes : scale.notes
+            notes : scale.notes,
+            description : scale.description || ""
           });
         }
         return selections;
       }
 
-      if(this.highlighting && !$element.hasClass('highlight')) {
+      if(this.highlighting) {
         this.clearClass('highlight');
         this.highlighting = false;
       }
+
       testScales();
 
     };
@@ -174,7 +180,9 @@ var App = (function (response) {
           if(scale[i].match && renderObjectMatch !== false) {
             renderObject[scale[i].name] = {
               notes : scale[i].notes,
-              match : scale[i].match
+              name : scale[i].name,
+              match : scale[i].match,
+              description : scale[i].description
             };
           } else {
             renderObject[scale[i].name] = {
@@ -184,11 +192,11 @@ var App = (function (response) {
         }
       }
 
-      function createResult (name, notes) {
+      function createResult (scale) {
         var $element = $('<li class="result">'),
               result = $.extend(new View($element), new Result());
 
-        result.init(name, notes);
+        result.init(scale);
         return result;
       }
 
@@ -197,7 +205,7 @@ var App = (function (response) {
       for(var key in renderObject) {
         if(renderObject[key].match) {
           resultCount += 1;
-          result = createResult(key, renderObject[key].notes);
+          result = createResult(renderObject[key]);
           docFrag.appendChild(result.render().el);
         }
       }
@@ -234,6 +242,44 @@ var App = (function (response) {
       return fret;
     };
   };
+
+  var SelectionDescription = function () {
+
+    this.init = function () {
+      this.setEvents();
+    };
+
+    this.setEvents = function () {
+      var self = this;
+      $broker.on('scale:selected', function (e) {
+        self.render(e.scale);
+      });
+      $broker.on('selection:cleared', function () {
+        self.clearDescription();
+      });
+    };
+
+    this.render = function (scale) {
+      var docFrag = document.createDocumentFragment();
+
+      var $h3 = $('<h3>' + scale.name + '</h3>'),
+            $p = $('<p>' + scale.description + '</p>');
+
+      docFrag.appendChild($h3[0]);
+      docFrag.appendChild($p[0]);
+
+      this.$el.html(docFrag);
+
+    };
+
+    this.clearDescription = function () {
+      this.$el.empty();
+    };
+
+  };
+
+  var selectionDescription = $.extend(new View($selectionDescription), new SelectionDescription());
+  selectionDescription.init();
 
   //////////////////////////////////
   /* Each fret has it's own click event */
@@ -294,26 +340,26 @@ var App = (function (response) {
 
   var Result = function () {
 
-    this.init = function (name, notes) {
-      this.name = name;
-      this.notes = notes;
+    this.init = function (scale) {
+      this.scale = scale;
       this.setEvents();
     };
 
     this.setEvents = function () {
       var self = this;
-      this.$el.on('click', function () {
+      this.$el.on('click', function (e) {
+        e.stopPropagation();
         self.handler();
       });
     };
 
     this.render = function () {
-      var $heading = $('<h3>' + this.name + '</h3>'),
+      var $heading = $('<h3>' + this.scale.name + '</h3>'),
             $ul = $('<ul></ul>'),
             docFrag = document.createDocumentFragment();
 
-      for(var key in this.notes) {
-        var $li = $('<li>' + this.notes[key] + '</li>');
+      for(var key in this.scale.notes) {
+        var $li = $('<li>' + this.scale.notes[key] + '</li>');
         docFrag.appendChild($li[0]);
       }
 
@@ -325,8 +371,8 @@ var App = (function (response) {
 
     this.handler = function (e) {
       $broker.trigger({
-        type : 'selection:selected',
-        notes : this.notes
+        type : 'scale:selected',
+        scale : this.scale
       });
     };
 

@@ -27,6 +27,9 @@ h3 {
   font-size:18px;
   margin-bottom:5px;
 }
+p {
+  line-height:120%;
+}
 .scales-title {
   display:inline;
 }
@@ -104,30 +107,43 @@ button:hover {
 .scale .fret-board .selected {
   background:#C6FFFE;
 }
-.results {
+.result-content {
   position:absolute;
-  top:304px;
+  top:307px;
   right:20px;
   left:20px;
   z-index:0;
 }
-.results li.result {
+.result-content .results {
+  width:49%;
+  float:left;
+}
+.result-content .selection-description {
+  width:49%;
+  margin-top:30px;
+  position: fixed;
+  right:0;
+}
+.result-content .selection-description h3 {
+  margin-bottom:15px;
+}
+.result-content .results li.result {
   padding:8px 0 8px 8px;
   border-bottom:1px solid #F4FFFF;
   cursor:pointer;
 }
-.results li.result:nth-child(even) {
+.result-content .results li.result:nth-child(even) {
   background:#F4FFFF;
 }
-.results li.result:hover {
+.result-content .results li.result:hover {
   background:#C6FFFE;
 }
-.results ul {
+.result-content .results ul {
   content:"";
   display:table;
   clear:both;
 }
-.results ul li {
+.result-content .results ul li {
   float:left;
   margin-right:5px;
 }
