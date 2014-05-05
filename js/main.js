@@ -37,6 +37,7 @@ var App = (function (response) {
       this.$fretBoard = this.$el.find('.fret-board');
       this.$clearHighlighting = this.$el.parent().find('.clear-highlighting');
       this.$clearSelection = this.$el.parent().find('.clear-selection');
+      this.$resultCount = this.$el.parent().find('.result-count');
     };
 
     this.setEvents = function () {
@@ -157,7 +158,8 @@ var App = (function (response) {
       var self = this,
             renderObject = {},
             docFrag = document.createDocumentFragment(),
-            result;
+            result,
+            resultCount = 0;
 
       function iterateScales () {
         for(var i = 0; i<scales.length; i++) {
@@ -193,11 +195,13 @@ var App = (function (response) {
 
       for(var key in renderObject) {
         if(renderObject[key].match) {
+          resultCount += 1;
           result = createResult(key, renderObject[key].notes);
           docFrag.appendChild(result.render().el);
         }
       }
 
+      this.$resultCount.html(resultCount);
       this.$el.closest('#scale').find('#results').html(docFrag);
 
     };
