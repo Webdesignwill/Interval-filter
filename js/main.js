@@ -1,6 +1,6 @@
 
 var App = (function (response) {
-
+alert('CUUUUUUUU');
   var $broker = $({});
 
   var config = {
