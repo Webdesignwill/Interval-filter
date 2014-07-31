@@ -1,6 +1,6 @@
 
 var App = (function (response) {
-alert('CUUUUUUUU');
+
   var $broker = $({});
 
   var config = {
@@ -141,7 +141,6 @@ alert('CUUUUUUUU');
         var scale, selections = [];
         for(var i = 0;i<config.scales.length;i++) {
           scale = config.scales[i];
-          console.log(scale);
           selections.push({
             match : scale.notes[selection] ? true : false,
             name : scale.name,
