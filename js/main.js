@@ -385,7 +385,7 @@ var App = (function (response) {
 
 $(document).ready(function() {
   $.ajax({
-    url : '../../scales.json',
+    url : '../../js/scales.json',
     method : 'GET',
     success : function (response) {
       new App(response);
