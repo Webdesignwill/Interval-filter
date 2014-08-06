@@ -27,7 +27,7 @@
     "11" : 11,
     "12" : 12
   },
-  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
+  "description" : "Major scale, Major7, Major9, Major11, Major13"
 },{
   "name" : "Dorian",
   "notes" : {
@@ -39,7 +39,7 @@
     "10" : 10,
     "12" : 12
   },
-  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
+  "description" : "Minor scale, Minor 7, Dominant7"
 },{
   "name" : "Phrygian",
   "notes" : {
@@ -51,7 +51,7 @@
     "10" : 10,
     "12" : 12
   },
-  "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tortor massa. Donec nisl massa, mollis ac semper a, blandit eget nunc. Vestibulum eget tristique nisi, non rhoncus nisi. Sed sagittis lectus vel mollis interdum. Integer metus quam, vulputate lacinia semper vitae, aliquet a mauris. In porttitor auctor lacus. Vestibulum egestas, mauris eget mollis fermentum, ligula purus pulvinar nunc, sit amet molestie ipsum tortor id ante. Praesent sed bibendum nisl. Nullam vitae consectetur est. Sed blandit scelerisque nisl eu suscipit."
+  "description" : "Minor scale, Minor 7,"
 },{
   "name" : "Mixolydian",
   "notes" : {
