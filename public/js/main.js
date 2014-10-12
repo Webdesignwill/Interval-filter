@@ -176,7 +176,7 @@ var App = (function (response) {
       }
 
       function createResult (scale) {
-        var $element = $('<a href="#"></a>'),
+        var $element = $('<a href="#" class="list-group-item"></a>'),
               result = $.extend(new View($element), new Result());
 
         result.init(scale);

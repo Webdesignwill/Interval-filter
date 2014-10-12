@@ -14,13 +14,6 @@ body {
 .list-group {
   margin-bottom:0;
 }
-.list-group a {
-  display:block;
-  margin-bottom:10px;
-}
-.list-group a:last-child {
-  margin-bottom:0;
-}
 .clear:after {
   content:"";
   display:table;
