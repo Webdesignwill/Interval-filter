@@ -1,0 +1,91 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color : #555555;
+}
+.navbar {
+  margin-bottom:0;
+}
+.list-group {
+  margin-bottom:0;
+}
+.list-group a {
+  display:block;
+  margin-bottom:10px;
+}
+.list-group a:last-child {
+  margin-bottom:0;
+}
+.clear:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+.scale ul.fret-board {
+  height:150px;
+  margin-bottom:0;
+}
+.scale .fret-board li {
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  height:100%;
+  font-size:20px;
+  text-align:center;
+}
+.scale .fret-board li .interval{
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  height:100%;
+  width:100%;
+  position:relative;
+  top:40%;
+}
+.scale .fret-board li:hover {
+  background:#d9edf7;
+  cursor: pointer;
+}
+.scale .fret-board li:hover .interval{
+  color : #000000;
+}
+.scale .fret-board li.selected .interval {
+  color : #000000;
+}
+.scale .fret-board .highlight {
+  background:#dff0d8;
+}
+.scale .fret-board .selected {
+  background:#d9edf7;
+}
+.result-content {
+  z-index:0;
+}
+.result-content .results ul {
+  content:"";
+  display:table;
+  clear:both;
+}
+.result-content .results ul li {
+  float:left;
+  margin-right:5px;
+}
+.result-content .results a {
+  text-decoration:none;
+}
+.result-content .results h3, .result-content .results ul {
+  margin:0;
+  padding:0;
+}
+.result-count-text {
+  display:none;
+}

@@ -4,13 +4,13 @@ var App = (function (response) {
   var $broker = $({});
 
   var config = {
-    frets : 12
+    frets : 12,
+    scales : response
   };
-
-  config.scales = response;
 
   var $body = $('body'),
         $fretBoard = $body.find('#fret-board'),
+        $controls = $body.find('#controls'),
         $selectionDescription = $body.find('#selection-description');
 
   var View = function ($element) {
@@ -36,8 +36,6 @@ var App = (function (response) {
 
     this.setElements = function () {
       this.$fretBoard = this.$el.find('.fret-board');
-      this.$clearHighlighting = this.$el.parent().find('.clear-highlighting');
-      this.$clearSelection = this.$el.parent().find('.clear-selection');
       this.$resultCountText = this.$el.parent().find('.result-count-text');
       this.$resultCount = this.$resultCountText.find('.result-count');
     };
@@ -54,22 +52,6 @@ var App = (function (response) {
       });
       $broker.on('scale:selected', function (e) {
         self.highlightSelection(e.scale.notes);
-      });
-      this.$clearHighlighting.on('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        self.clearClass('highlight');
-        self.highlighting = false;
-      });
-      this.$clearSelection.on('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        self.clearClass('selected', true);
-        self.removeAllSelections();
-        self.filterResults();
-
-        $broker.trigger('selection:cleared');
-
       });
     };
 
@@ -88,15 +70,16 @@ var App = (function (response) {
     };
 
     this.clearClass = function (rmClass, unselect) {
-      for(var i = 0;i<this.fretsArray.length;i++) {
-        fret = this.fretsArray[i];
-        if(fret.$el.hasClass(rmClass)) {
-          fret.$el.removeClass(rmClass);
-        }
-        if(unselect) {
-          fret.selected = false;
-        }
-      }
+      alert('CLEAR CLASS');
+      // for(var i = 0;i<this.fretsArray.length;i++) {
+      //   fret = this.fretsArray[i];
+      //   if(fret.$el.hasClass(rmClass)) {
+      //     fret.$el.removeClass(rmClass);
+      //   }
+      //   if(unselect) {
+      //     fret.selected = false;
+      //   }
+      // }
     };
 
     this.highlightSelection = function (notes) {
@@ -193,7 +176,7 @@ var App = (function (response) {
       }
 
       function createResult (scale) {
-        var $element = $('<li class="result">'),
+        var $element = $('<a href="#"></a>'),
               result = $.extend(new View($element), new Result());
 
         result.init(scale);
@@ -232,7 +215,7 @@ var App = (function (response) {
     };
 
     this.createFret = function (i) {
-      var $element = $('<li>'),
+      var $element = $('<li class="col-md-1 col-xs-1">'),
             fret = $.extend(new View($element), new Fret());
 
       fret.init({
@@ -307,23 +290,19 @@ var App = (function (response) {
     };
 
     this.toggleSelection = function () {
-      if(this.selected) {
-        this.$el.removeClass('selected');
-        this.selected = false;
-        $broker.trigger({
-          type : 'interval:removed',
-          interval : this.iterator,
-          element : this.$el
-        });
-        return;
-      }
-      this.$el.addClass('selected');
-      this.selected = true;
+
+      var cla = this.selected ? 'removeClass' : 'addClass';
+      this.$el[cla]('selected');
+
+      var action = this.selected ? 'removed' : 'selected';
       $broker.trigger({
-        type : 'interval:selected',
+        type : 'interval:' + action,
         interval : this.iterator,
         element : this.$el
       });
+
+      this.selected = this.selected ? false : true;
+
     };
 
     this.render = function () {
@@ -333,6 +312,38 @@ var App = (function (response) {
 
     return this;
   };
+
+  ////////////////////////////
+  /* Buttons and control panel */
+  ////////////////////////////
+
+  var Controls = function () {
+    this.init = function () {
+      this.setElements();
+      this.setEvents();
+    };
+    this.setElements = function () {
+      this.$clearHighlighting = this.$el.parent().find('.clear-highlighting');
+      this.$clearSelection = this.$el.parent().find('.clear-selection');
+    };
+    this.setEvents = function () {
+      this.$clearHighlighting.on('click', function (e) {
+        self.clearClass('highlight');
+        self.highlighting = false;
+      });
+      this.$clearSelection.on('click', function (e) {
+        self.clearClass('selected', true);
+        self.removeAllSelections();
+        self.filterResults();
+
+        $broker.trigger('selection:cleared');
+
+      });
+    };
+  };
+
+  var controls = $.extend(new View($controls), new Controls());
+  controls.init();
 
   ////////////////////////////////////////
   /* Each result displays the title and notes */
@@ -348,7 +359,7 @@ var App = (function (response) {
     this.setEvents = function () {
       var self = this;
       this.$el.on('click', function (e) {
-        e.stopPropagation();
+        e.preventDefault();
         self.handler();
       });
     };
@@ -384,10 +395,23 @@ var App = (function (response) {
 });
 
 $(document).ready(function() {
+
+  function parseNotes (notes) {
+    var n = {};
+    notes = notes.split(',');
+    for(var i = 0; i<notes.length; i++) {
+      n[notes[i]] = parseFloat(notes[i]);
+    }
+    return n;
+  }
+
   $.ajax({
     url : '/api/scale/all',
     method : 'GET',
     success : function (response) {
+      for(var i = 0; i<response.length;i++) {
+        response[i].notes = parseNotes(response[i].notes);
+      }
       new App(response);
     }
   });

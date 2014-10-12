@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>Essex Guitar Tuition</title>
-    <link href="/css/reset.css" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/assets/css/reset.css" rel="stylesheet" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
     <script src="/js/libs/jquery.js"></script>
+    <script src="/js/libs/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
   </head>
   <body class="color-white">
-    <section id="scale" class="scale">
-      <header class="head">
-        <h1>Interval fun with</h1>
-        <h2>Essex Guitar Tuition</h2>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Interval Filter</a>
+        </div>
+      </div>
+    </div>
+    <main role="main" id="scale" class="scale container-fluid">
+      <header class="head row">
         <ul id="fret-board" class="fret-board"></ul>
-        <p class="scales-title">Scales with the selected intervals</p>
-        <button class="clear-highlighting">Clear Highlights</button>
-        <button class="clear-selection">Clear Selection</button>
-        <p class="result-count-text">Showing <span class="result-count"></span> results</p>
       </header>
-      <section class="result-content clear">
-        <ul id="results" class="results"></ul>
-        <div id="selection-description" class="selection-description"></div>
+      <div id="controls" class="panel panel-default">
+        <div class="panel-body">
+          <button type="button" class="btn btn-primary btn-sm clear-highlighting">Clear Highlights</button>
+          <button type="button" class="btn btn-primary btn-sm clear-selection">Clear Selection</button>
+          <p class="col-md-12 result-count-text">Showing <span class="result-count badge"></span> results</p>
+        </div>
+      </div>
+      <section class="result-content panel panel-default">
+        <div class="panel-heading">Panel heading without title</div>
+        <div class="panel-body">
+          <div id="results" class="results list-group col-md-6"></div>
+          <div id="selection-description" class="col-md-6"></div>
+        </div>
       </section>
-    </section>
+    </main>
   </body>
 </html>
