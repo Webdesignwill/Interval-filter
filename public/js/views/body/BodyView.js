@@ -3,8 +3,9 @@ define([
   'FretboardView',
   'ControlsView',
   'ListParentView',
+  'DescriptionView',
   'text!views/body/templates/body.tpl'
-], function (FretboardView, ControlsView, ListParentView, template) {
+], function (FretboardView, ControlsView, ListParentView, DescriptionView, template) {
 
   "use strict";
 
@@ -22,6 +23,7 @@ define([
       this.$fretBoard = this.$el.find('#fret-board');
       this.$controls = this.$el.find('#controls');
       this.$filteredList = this.$el.find('#filtered-list');
+      this.$selectionDescription = this.$el.find('#selection-description');
     },
 
     renderPageComponents : function () {
@@ -36,6 +38,10 @@ define([
 
       new ListParentView({
         el : this.$filteredList
+      });
+
+      new DescriptionView({
+        el : this.$selectionDescription
       });
 
     },

@@ -25,7 +25,7 @@ define([
     setListeners : function () {
       var self = this;
 
-      App.$broker.on('selection:clear', function (e) {
+      App.$broker.on('clear:selection', function (e) {
         self.model.set('selected', false);
       });
       // App.$broker.on('highlighting:clear', function (e) {
@@ -49,8 +49,7 @@ define([
     },
 
     updateAttrs : function () {
-      var cla = this.model.get('selected') ? 'addClass' : 'removeClass';
-      this.$el[cla]('selected');
+      this.$el[this.model.get('selected') ? 'addClass' : 'removeClass']('selected');
 
       var action = this.model.get('selected') ? 'add' : 'remove';
       SelectionCollection[action](this.model);

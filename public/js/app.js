@@ -1,4 +1,15 @@
 
+/* TODO
+
+Remove the selectionCollection and set the models in the ScalesCollection when the fret is clicked
+Then everything is revolving around a single colection as opposed to two
+
+check the fret view how it triggers a change event of sorts to the SelectionCollection and
+instead, set that respective model in the ScalesCollection
+
+Listen then everywhere for tha change event.
+
+*/
 define([
   'Backbone',
   'require',

@@ -15,7 +15,7 @@ define([
     },{
       name : 'Clear Selection',
       class : 'clear-selection',
-      event : 'selection:clear'
+      event : 'clear:selection'
     }],
 
     initialize : function () {
@@ -44,28 +44,3 @@ define([
   return Controls;
 
 });
-
-// var Controls = function () {
-//   this.init = function () {
-//     this.setElements();
-//     this.setEvents();
-//   };
-//   this.setElements = function () {
-//     this.$clearHighlighting = this.$el.parent().find('.clear-highlighting');
-//     this.$clearSelection = this.$el.parent().find('.clear-selection');
-//   };
-//   this.setEvents = function () {
-//     this.$clearHighlighting.on('click', function (e) {
-//       self.clearClass('highlight');
-//       self.highlighting = false;
-//     });
-//     this.$clearSelection.on('click', function (e) {
-//       self.clearClass('selected', true);
-//       self.removeAllSelections();
-//       self.filterResults();
-
-//       $broker.trigger('selection:cleared');
-
-//     });
-//   };
-// };

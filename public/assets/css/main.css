@@ -48,7 +48,7 @@ body {
   background:#d9edf7;
   cursor: pointer;
 }
-.scale .fret-board li:hover .interval{
+.scale .fret-board li:hover .interval {
   color : #000000;
 }
 .scale .fret-board li.selected .interval {
@@ -63,22 +63,19 @@ body {
 .result-content {
   z-index:0;
 }
-.result-content .filtered-list ul {
-  content:"";
-  display:table;
-  clear:both;
-}
-.result-content .filtered-list ul li {
-  float:left;
-  margin-right:5px;
+.result-content .filtered-list {
+  cursor:pointer;
 }
 .result-content .filtered-list a {
   text-decoration:none;
 }
-.result-content .filtered-list h3, .result-content .filtered-list ul {
+.result-content .filtered-list h3, .result-content .filtered-list p {
   margin:0;
   padding:0;
 }
 .result-count-text {
   display:none;
+}
+.selection-description h3 {
+  margin-top:0;
 }

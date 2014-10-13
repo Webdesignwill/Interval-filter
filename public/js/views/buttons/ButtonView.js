@@ -1,7 +1,8 @@
 
 define([
-  'App'
-], function (App) {
+  'App',
+  'ScalesCollection'
+], function (App, ScalesCollection) {
 
   "use strict";
 
@@ -26,6 +27,8 @@ define([
 
     handler : function (e) {
       e.preventDefault();
+      /* Have this trigger a clear event to the Scales Collection. THis will go through the models
+      and set each one to false */
       App.$broker.trigger(this.options.event);
     }
 

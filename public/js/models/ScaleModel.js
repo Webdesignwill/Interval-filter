@@ -13,8 +13,13 @@ define([
       });
     },
 
+    parse : function (object) {
+      object['displayNotes'] = object.notes.toString();
+      return object;
+    },
+
     filter : function () {
-      var selection = [], match;
+      var selection = [];
       for(var i = 0;i<SelectionCollection.models.length;i++) {
         var model = SelectionCollection.models[i];
         selection.push(model.get('number'));
