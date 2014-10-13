@@ -55,6 +55,7 @@ define([
       var action = this.model.get('selected') ? 'add' : 'remove';
       SelectionCollection[action](this.model);
 
+      SelectionCollection.trigger('updated', this);
     }
   });
 

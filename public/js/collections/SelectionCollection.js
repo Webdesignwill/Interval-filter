@@ -1,5 +1,7 @@
 
-define([], function () {
+define([
+  'Backbone'
+], function (Backbone) {
 
   "use strict";
 

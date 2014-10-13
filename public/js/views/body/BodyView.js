@@ -21,7 +21,7 @@ define([
     setElements : function () {
       this.$fretBoard = this.$el.find('#fret-board');
       this.$controls = this.$el.find('#controls');
-      this.$filteredList = this.$el.find('#filteredList');
+      this.$filteredList = this.$el.find('#filtered-list');
     },
 
     renderPageComponents : function () {

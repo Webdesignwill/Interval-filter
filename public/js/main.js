@@ -32,7 +32,6 @@ var base_require = require.config({
 
     ScalesCollection                        : 'collections/ScalesCollection',
     SelectionCollection                   : 'collections/SelectionCollection',
-    FilteredCollection                      : 'collections/FilteredCollection',
 
     ScaleModel                                : 'models/ScaleModel'
 
