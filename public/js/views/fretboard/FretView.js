@@ -1,10 +1,11 @@
 
 define([
   'App',
+  'SelectionCollection',
   'handlebars',
   'FretModel',
   'text!views/fretboard/templates/fret.tpl'
-], function (App, handlebars, FretModel, template) {
+], function (App, SelectionCollection, handlebars, FretModel, template) {
 
   "use strict";
 
@@ -17,9 +18,7 @@ define([
     },
 
     initialize : function (options) {
-      this.options = options;
-      this.options.number = this.options.number + 1;
-      this.model = new FretModel();
+      this.model = new FretModel({number : options.number + 1});
       this.setListeners();
     },
 
@@ -39,7 +38,7 @@ define([
 
     render : function () {
       var tpl = handlebars.compile(template);
-      var compiled = tpl({count : this.options.number});
+      var compiled = tpl({count : this.model.get('number')});
 
       this.$el.html(compiled);
       return this;
@@ -53,12 +52,8 @@ define([
       var cla = this.model.get('selected') ? 'addClass' : 'removeClass';
       this.$el[cla]('selected');
 
-      // var action = this.selected ? 'removed' : 'selected';
-      // App.$broker.trigger({
-      //   type : 'interval:' + action,
-      //   interval : this.options.number,
-      //   element : this.$el
-      // });
+      var action = this.model.get('selected') ? 'add' : 'remove';
+      SelectionCollection[action](this.model);
 
     }
   });

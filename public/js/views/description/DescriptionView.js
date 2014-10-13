@@ -1,6 +1,6 @@
 
 define([
-  'text!views/results/templates/description.tpl'
+  'text!views/filteredList/templates/description.tpl'
 ], function (template) {
 
   "use strict";

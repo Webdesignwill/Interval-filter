@@ -22,12 +22,19 @@ var base_require = require.config({
     FretView                                    : 'views/fretboard/FretView',
     FretModel                                  : 'views/fretboard/model/FretModel',
 
-    ListItemView                              : 'views/results/ListItemView',
-    ListParentView                           : 'views/results/ListParentView',
-    DescriptionView                        : 'views/results/DescriptionView',
+    ListItemView                              : 'views/filteredList/ListItemView',
+    ListParentView                           : 'views/filteredList/ListParentView',
+
+    DescriptionView                        : 'views/description/DescriptionView',
 
     ControlsView                             : 'views/controls/ControlsView',
-    ButtonView                                : 'views/buttons/ButtonView'
+    ButtonView                                : 'views/buttons/ButtonView',
+
+    ScalesCollection                        : 'collections/ScalesCollection',
+    SelectionCollection                   : 'collections/SelectionCollection',
+    FilteredCollection                      : 'collections/FilteredCollection',
+
+    ScaleModel                                : 'models/ScaleModel'
 
   },
   shim : {

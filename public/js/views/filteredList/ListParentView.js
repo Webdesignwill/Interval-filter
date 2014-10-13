@@ -1,10 +1,29 @@
 
-define([], function () {
+define([
+  'ListItemView',
+  'FilteredCollection'
+], function (ListItemView, FilteredCollection) {
 
   "use strict";
 
   var ListParentView = Backbone.View.extend({
-    initialize : function () {}
+    initialize : function () {
+      this.listenTo(FilteredCollection, 'change', function (model, options) {
+        this.render();
+      });
+    },
+
+    render : function () {
+      var df = document.createDocumentFragment();
+      FilteredCollection.each(function (index, model, what) {
+        var liv = new ListItemView({
+          model : model
+        });
+        df.appendChild(liv.render().el);
+      });
+      this.$el.html(df);
+      return this;
+    }
   });
 
   return ListParentView;

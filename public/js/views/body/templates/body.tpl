@@ -13,7 +13,7 @@
   <section class="result-content panel panel-default">
     <div class="panel-heading">Panel heading without title</div>
     <div class="panel-body">
-      <div id="results" class="results list-group col-md-6"></div>
+      <div id="filtered-list" class="filtered-list list-group col-md-6"></div>
       <div id="selection-description" class="col-md-6"></div>
     </div>
   </section>

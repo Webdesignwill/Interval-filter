@@ -1,12 +1,14 @@
 
 define([
-  'text!views/results/templates/listItem.tpl'
+  'text!views/filteredList/templates/listItem.tpl'
 ], function (template) {
 
   "use strict";
 
   var ListItemView = Backbone.View.extend({
-    initialize : function () {}
+    initialize : function (options) {
+      this.options = options;
+    }
   });
 
   return ListItemView;

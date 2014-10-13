@@ -1,8 +1,9 @@
 
 define([
   'Backbone',
-  'require'
-], function (Backbone, require) {
+  'require',
+  'ScalesCollection'
+], function (Backbone, require, ScalesCollection) {
 
   "use strict";
 
@@ -14,8 +15,17 @@ define([
     },
 
     init : function () {
+      this.loadScales(this.loadBody);
+    },
+
+    loadScales : function (done) {
+      ScalesCollection.fetch({success : done});
+    },
+
+    loadBody : function () {
       require(['BodyView'], function (BodyView) {});
     }
+
   });
 
   return new App();

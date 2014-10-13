@@ -63,19 +63,19 @@ body {
 .result-content {
   z-index:0;
 }
-.result-content .results ul {
+.result-content .filtered-list ul {
   content:"";
   display:table;
   clear:both;
 }
-.result-content .results ul li {
+.result-content .filtered-list ul li {
   float:left;
   margin-right:5px;
 }
-.result-content .results a {
+.result-content .filtered-list a {
   text-decoration:none;
 }
-.result-content .results h3, .result-content .results ul {
+.result-content .filtered-list h3, .result-content .filtered-list ul {
   margin:0;
   padding:0;
 }
