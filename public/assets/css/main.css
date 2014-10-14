@@ -60,16 +60,16 @@ body {
 .scale .fret-board .selected {
   background:#d9edf7;
 }
-.result-content {
+.match-content {
   z-index:0;
 }
-.result-content .filtered-list {
+.match-content .filtered-list {
   cursor:pointer;
 }
-.result-content .filtered-list a {
+.match-content .filtered-list a {
   text-decoration:none;
 }
-.result-content .filtered-list h3, .result-content .filtered-list p {
+.match-content .filtered-list h3, .match-content .filtered-list p {
   margin:0;
   padding:0;
 }

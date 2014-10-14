@@ -1,1 +1,0 @@
-Showing <span class="result-count badge"></span> results out of <span class="total-count badge"></span> scales.

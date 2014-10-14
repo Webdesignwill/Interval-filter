@@ -12,8 +12,8 @@
   <div class="panel panel-default">
     <div id="controls" class="panel-body controls"></div>
   </div>
-  <section class="result-content panel panel-default">
-    <div id="result-count-container" class="panel-heading"></div>
+  <section class="match-content panel panel-default">
+    <div id="match-count-container" class="panel-heading"></div>
     <div class="panel-body">
       <div id="filtered-list" class="filtered-list list-group col-md-6"></div>
       <div id="selection-description" class="col-md-6"></div>

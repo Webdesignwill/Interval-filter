@@ -9,6 +9,13 @@ define([
     url : '/api/scale/all',
     model : ScaleModel,
 
+    getMatchCount : function () {
+      var count = _.countBy(this.models, function (model) {
+        return model.get('match');
+      });
+      return count.true || 0;
+    },
+
     parse : function (response) {
       function parseNotes (notes) {
         var n = [];

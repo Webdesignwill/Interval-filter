@@ -1,12 +1,12 @@
 
 define([
   'FretboardView',
-  'ResultCountView',
+  'MatchCountView',
   'ControlsView',
   'ListParentView',
   'DescriptionView',
   'text!views/body/templates/body.tpl'
-], function (FretboardView, ResultCountView, ControlsView, ListParentView, DescriptionView, template) {
+], function (FretboardView, MatchCountView, ControlsView, ListParentView, DescriptionView, template) {
 
   "use strict";
 
@@ -23,7 +23,7 @@ define([
     setElements : function () {
       this.$fretBoard = this.$el.find('#fret-board');
       this.$controls = this.$el.find('#controls');
-      this.$resultCountContainer = this.$el.find('#result-count-container');
+      this.$matchCountContainer = this.$el.find('#match-count-container');
       this.$filteredList = this.$el.find('#filtered-list');
       this.$selectionDescription = this.$el.find('#selection-description');
     },
@@ -38,8 +38,8 @@ define([
         el : this.$controls
       });
 
-      new ResultCountView({
-        el : this.$resultCountContainer
+      new MatchCountView({
+        el : this.$matchCountContainer
       });
 
       new ListParentView({

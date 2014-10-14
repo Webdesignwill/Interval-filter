@@ -2,12 +2,12 @@
 define([
   'ScalesCollection',
   'SelectionCollection',
-  'text!views/resultCount/templates/resultCount.tpl'
+  'text!views/matchCount/templates/matchCount.tpl'
 ], function (ScalesCollection, SelectionCollection, template) {
 
   "use strict";
 
-  var ResultCount = Backbone.View.extend({
+  var MatchCount = Backbone.View.extend({
 
     initialize : function () {
       this.listenTo(SelectionCollection, 'updated', function (model, options) {
@@ -17,15 +17,12 @@ define([
     },
 
     setElements : function () {
-      this.$resultCount = this.$el.find('.result-count');
+      this.$matchCount = this.$el.find('.match-count');
       this.$totalCount = this.$el.find('.total-count');
     },
 
     updateCount : function () {
-      var count = _.countBy(ScalesCollection.models, function (model) {
-        return model.get('match');
-      });
-      this.$resultCount.html(count.true || 0);
+      this.$matchCount.html(ScalesCollection.getMatchCount());
     },
 
     render : function () {
@@ -38,6 +35,6 @@ define([
     }
   });
 
-  return ResultCount;
+  return MatchCount;
 
 });
