@@ -10,8 +10,6 @@ define([
   var ListParentView = Backbone.View.extend({
 
     initialize : function () {
-      /* TODO this will go after the new change
-      This should listen to ScalesColection being set */
       this.listenTo(SelectionCollection, 'updated', function (model, options) {
         this.render();
       });

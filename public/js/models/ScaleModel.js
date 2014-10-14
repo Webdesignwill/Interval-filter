@@ -7,9 +7,15 @@ define([
   "use strict";
 
   var ScaleModel = Backbone.Model.extend({
+
+    defaults : {
+      selected : false,
+      match : false
+    },
+
     initialize : function () {
       this.listenTo(SelectionCollection, 'all', function (event, model, selectionCollection) {
-        if(event === 'add' || event === 'remove') this.filter();
+        if(event === 'add' || event === 'remove') return this.filter();
       });
     },
 

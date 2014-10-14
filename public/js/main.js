@@ -22,6 +22,8 @@ var base_require = require.config({
     FretView                                    : 'views/fretboard/FretView',
     FretModel                                  : 'views/fretboard/model/FretModel',
 
+    ResultCountView                       : 'views/resultCount/ResultCountView',
+
     ListItemView                              : 'views/filteredList/ListItemView',
     ListParentView                           : 'views/filteredList/ListParentView',
 

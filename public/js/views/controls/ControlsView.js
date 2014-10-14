@@ -1,8 +1,7 @@
 
 define([
-  'ButtonView',
-  'text!views/controls/templates/controls.tpl'
-], function (ButtonView, template) {
+  'ButtonView'
+], function (ButtonView) {
 
   "use strict";
 
@@ -10,11 +9,11 @@ define([
 
     buttons : [{
       name : 'Clear Highlighting',
-      class : 'clear-highlighting',
+      class : 'btn-warning',
       event : 'highlighting:clear'
     },{
       name : 'Clear Selection',
-      class : 'clear-selection',
+      class : 'btn-warning',
       event : 'clear:selection'
     }],
 
@@ -23,9 +22,6 @@ define([
     },
 
     render : function () {
-      this.$el.html(template);
-      var self = this;
-
       var df = document.createDocumentFragment();
       for(var i = 0;i<this.buttons.length;i++) {
         var btn = new ButtonView({
@@ -35,7 +31,7 @@ define([
         });
         df.appendChild(btn.render().el);
       }
-      this.$el.find('.panel-body').html(df);
+      this.$el.html(df);
       return this;
     }
 

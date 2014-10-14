@@ -73,9 +73,9 @@ body {
   margin:0;
   padding:0;
 }
-.result-count-text {
-  display:none;
-}
 .selection-description h3 {
   margin-top:0;
+}
+.controls button {
+  margin-right:5px;
 }

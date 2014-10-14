@@ -18,12 +18,9 @@ define([
     },
 
     initialize : function (options) {
-      this.model = new FretModel({number : options.number + 1});
-      this.setListeners();
-    },
-
-    setListeners : function () {
       var self = this;
+
+      this.model = new FretModel({number : options.number + 1});
 
       App.$broker.on('clear:selection', function (e) {
         self.model.set('selected', false);
@@ -34,6 +31,7 @@ define([
       this.model.on('change:selected', function () {
         self.updateAttrs();
       });
+
     },
 
     render : function () {

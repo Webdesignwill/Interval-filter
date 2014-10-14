@@ -1,9 +1,10 @@
 
 define([
+  'App',
   'ScalesCollection',
   'handlebars',
   'text!views/filteredList/templates/listItem.tpl'
-], function (ScalesCollection, handlebars, template) {
+], function (App, ScalesCollection, handlebars, template) {
 
   "use strict";
 
@@ -17,24 +18,30 @@ define([
     },
 
     initialize : function () {
+      var self = this;
       this.listenTo(ScalesCollection, 'change:selected', function (model) {
-        this.handleSelection(model);
+        if(model.get('_id') !== this.model.get('_id')) return this.clearSelection();
       }, this);
+
+      App.$broker.on('clear:selection', function () {
+        self.clearSelection();
+      });
     },
 
-    handleSelection : function (model) {
-      if(model.get('_id') === this.model.get('_id')) {
-        this.$el[this.model.get('selected') ? 'addClass' : 'removeClass'](this.selectedClass);
-      } else {
-        this.model.set({selected : false}, {silent : true});
-        this.$el.removeClass(this.selectedClass);
-      }
+    clearSelection : function () {
+      this.model.set({selected : false}, {silent : true});
+      this.toggleClass();
     },
 
     handler : function (e) {
       this.model.set({
         selected : this.model.get('selected') ? false : true
       });
+      this.toggleClass();
+    },
+
+    toggleClass : function () {
+      this.$el[this.model.get('selected') ? 'addClass' : 'removeClass'](this.selectedClass);
     },
 
     render : function () {

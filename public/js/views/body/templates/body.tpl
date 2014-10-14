@@ -9,9 +9,11 @@
   <header class="head row">
     <ul id="fret-board" class="fret-board"></ul>
   </header>
-  <div id="controls" class="panel panel-default"></div>
+  <div class="panel panel-default">
+    <div id="controls" class="panel-body controls"></div>
+  </div>
   <section class="result-content panel panel-default">
-    <div class="panel-heading">Panel heading without title</div>
+    <div id="result-count-container" class="panel-heading"></div>
     <div class="panel-body">
       <div id="filtered-list" class="filtered-list list-group col-md-6"></div>
       <div id="selection-description" class="col-md-6"></div>
