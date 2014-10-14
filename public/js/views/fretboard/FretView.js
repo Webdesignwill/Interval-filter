@@ -1,11 +1,10 @@
 
 define([
-  'App',
+  'ScalesCollection',
   'SelectionCollection',
   'handlebars',
-  'FretModel',
   'text!views/fretboard/templates/fret.tpl'
-], function (App, SelectionCollection, handlebars, FretModel, template) {
+], function (ScalesCollection, SelectionCollection, handlebars, template) {
 
   "use strict";
 
@@ -14,24 +13,17 @@ define([
     tagName : 'li',
     className : 'col-md-1 col-xs-1',
     events : {
-      'click' : 'click'
+      'click' : 'handler'
     },
 
-    initialize : function (options) {
+    initialize : function () {
       var self = this;
-
-      this.model = new FretModel({number : options.number + 1});
-
-      App.$broker.on('clear:selection', function (e) {
-        self.model.set('selected', false);
-      });
-      // App.$broker.on('highlighting:clear', function (e) {
-      //   self.model.set('highlight', false);
-      // });
       this.model.on('change:selected', function () {
         self.updateAttrs();
       });
-
+      this.model.on('change:highlight', function () {
+        self.toggleClass('highlight');
+      });
     },
 
     render : function () {
@@ -42,16 +34,18 @@ define([
       return this;
     },
 
-    click : function (e) {
+    handler : function (e) {
       this.model.set('selected', this.model.get('selected') ? false : true);
     },
 
-    updateAttrs : function () {
-      this.$el[this.model.get('selected') ? 'addClass' : 'removeClass']('selected');
+    toggleClass : function (att) {
+      this.$el[this.model.get(att) ? 'addClass' : 'removeClass'](att);
+    },
 
+    updateAttrs : function () {
+      this.toggleClass('selected');
       var action = this.model.get('selected') ? 'add' : 'remove';
       SelectionCollection[action](this.model);
-
       SelectionCollection.trigger('updated', this);
     }
   });

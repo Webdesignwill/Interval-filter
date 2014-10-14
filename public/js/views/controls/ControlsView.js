@@ -8,10 +8,6 @@ define([
   var Controls = Backbone.View.extend({
 
     buttons : [{
-      name : 'Clear Highlighting',
-      class : 'btn-warning',
-      event : 'highlighting:clear'
-    },{
       name : 'Clear Selection',
       class : 'btn-warning',
       event : 'clear:selection'

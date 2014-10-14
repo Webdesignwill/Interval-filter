@@ -49,6 +49,8 @@ define([
       var compiled = tpl(this.model.attributes);
 
       this.$el.html(compiled);
+      this.toggleClass();
+
       return this;
     }
   });

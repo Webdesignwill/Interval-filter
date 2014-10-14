@@ -1,8 +1,9 @@
 
 define([
   'App',
-  'FretView'
-], function (App, FretView) {
+  'FretView',
+  'FretModel'
+], function (App, FretView, FretModel) {
 
   "use strict";
 
@@ -14,7 +15,9 @@ define([
 
       var dc = document.createDocumentFragment();
       for(var i = 0; i<App.get('octave');i++) {
-        var fv = new FretView({number : i});
+        var fv = new FretView({
+          model : new FretModel({number : i+1})
+        });
         dc.appendChild(fv.render().el);
       }
       this.$el.html(dc);

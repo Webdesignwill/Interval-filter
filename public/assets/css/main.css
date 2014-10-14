@@ -79,3 +79,6 @@ body {
 .controls button {
   margin-right:5px;
 }
+.selection-description h3 {
+  margin-top:0;
+}

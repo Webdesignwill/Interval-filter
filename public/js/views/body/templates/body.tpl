@@ -16,7 +16,7 @@
     <div id="match-count-container" class="panel-heading"></div>
     <div class="panel-body">
       <div id="filtered-list" class="filtered-list list-group col-md-6"></div>
-      <div id="selection-description" class="col-md-6"></div>
+      <div id="selection-description" class="selection-description col-md-6"></div>
     </div>
     <div class="panel-footer">
       <a href="#">Back to top</a> <span class="glyphicon glyphicon-chevron-up"></span>
