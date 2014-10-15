@@ -47,14 +47,14 @@ var base_require = require.config({
       exports: 'Handlebars'
     }
   },
-  deps : ['jquery', 'underscore', 'app', 'domReady', 'Validation'],
-  callback : function ($, _, app, domReady) {
+  deps : ['jquery', 'underscore', 'App', 'domReady', 'Validation'],
+  callback : function ($, _, App, domReady) {
 
     // Mix in the validation for all models
     _.extend(Backbone.Model.prototype, Backbone.Validation.mixin);
 
     domReady(function() {
-      app.init();
+      App.init();
     });
   }
 });
