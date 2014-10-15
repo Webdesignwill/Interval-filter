@@ -1,7 +1,7 @@
 
 var base_require = require.config({
 
-  baseUrl : './',
+  baseUrl : './assets/js/',
   context : 'base_require',
 
   paths : {
