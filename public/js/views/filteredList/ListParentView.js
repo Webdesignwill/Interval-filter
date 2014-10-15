@@ -19,7 +19,7 @@ define([
     render : function () {
 
       if(ScalesCollection.getMatchCount() === 0) {
-        return this.$el.html('There are no matches to display');
+        return this.$el.html('<p class="text-warning">There are no matches to display</p>');
       }
 
       var df = document.createDocumentFragment();

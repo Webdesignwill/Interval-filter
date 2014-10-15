@@ -1,10 +1,4 @@
-<header class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Interval Filter <span class="glyphicon glyphicon-sound-7-1"></span></a>
-    </div>
-  </div>
-</header>
+<header id="navbar" class="navbar navbar-default navbar-static-top" role="navigation"></header>
 <main role="main" id="scale" class="scale container-fluid">
   <header class="head row">
     <ul id="fret-board" class="fret-board"></ul>
@@ -23,3 +17,4 @@
     </div>
   </section>
 </main>
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>

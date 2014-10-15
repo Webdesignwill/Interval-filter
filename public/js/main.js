@@ -4,6 +4,11 @@ var base_require = require.config({
   baseUrl : './js/',
   context : 'base_require',
 
+  packages: [{
+    name : 'forms',
+    location : 'forms'
+  }],
+
   paths : {
 
     jquery                                       : 'libs/jquery/jquery.min',
@@ -22,10 +27,15 @@ var base_require = require.config({
     FretView                                    : 'views/fretboard/FretView',
     FretModel                                  : 'views/fretboard/model/FretModel',
 
+    NavBarView                               : 'views/navbar/NavBarView',
+
     MatchCountView                       : 'views/matchCount/MatchCountView',
+    ModalView                                 : 'views/modal/ModalView',
 
     ListItemView                              : 'views/filteredList/ListItemView',
     ListParentView                           : 'views/filteredList/ListParentView',
+
+    LoginView                                 : 'views/admin/LoginView',
 
     DescriptionView                        : 'views/description/DescriptionView',
 
