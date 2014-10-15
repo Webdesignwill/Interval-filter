@@ -14,7 +14,7 @@ var base_require = require.config({
     text                                           : 'libs/require/text.min',
     domReady                                 : 'libs/require/domReady',
 
-    app                                            : 'app',
+    App                                            : 'App',
 
     BodyView                                  : 'views/body/BodyView',
 
