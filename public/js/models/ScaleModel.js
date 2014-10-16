@@ -1,8 +1,9 @@
 
 define([
   'Backbone',
+  'Oauth2Model',
   'SelectionCollection'
-], function (Backbone, SelectionCollection) {
+], function (Backbone, Oauth2Model, SelectionCollection) {
 
   "use strict";
 
@@ -11,6 +12,12 @@ define([
     defaults : {
       selected : false,
       match : false
+    },
+
+    urls : {
+      add : '/api/scale/add',
+      update : '/api/scale/update',
+      delete : '/api/scale/delete'
     },
 
     initialize : function () {
@@ -39,7 +46,64 @@ define([
           match : !ar.length ? true : false
         });
       }
+    },
+
+    add : function (user, done) {
+      $.ajax({
+        type : 'POST',
+        context : this,
+        url : this.urls.add,
+        contentType : 'application/x-www-form-urlencoded',
+        data : user,
+        success : function (data, status) {
+          this.set(data);
+          done(true, data, status);
+        },
+        error : function (data, status) {
+          done(false, data, status);
+        }
+      });
+    },
+
+    update : function (user, done) {
+      $.ajax({
+        type : 'PUT',
+        context : this,
+        url : this.urls.update,
+        contentType : 'application/x-www-form-urlencoded',
+        headers : {
+          Authorization : 'Bearer ' + Oauth2Model.get('access_token')
+        },
+        data : user,
+        success : function (data, status) {
+          this.set(data);
+          done(true, data, status);
+        },
+        error : function (data, status) {
+          done(false, data, status);
+        }
+      });
+    },
+
+    delete : function (done) {
+      $.ajax({
+        type : 'DELETE',
+        context : this,
+        url : this.urls.delete,
+        contentType : 'application/x-www-form-urlencoded',
+        headers : {
+          Authorization : 'Bearer ' + Oauth2Model.get('access_token')
+        },
+        success : function (data, status) {
+          this.clearUser();
+          done(true, data, status);
+        },
+        error : function (data, status) {
+          done(false, data, status);
+        }
+      });
     }
+
   });
 
   return ScaleModel;

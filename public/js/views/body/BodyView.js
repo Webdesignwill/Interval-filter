@@ -72,7 +72,7 @@ define([
         $(document).delegate("a:not(.anchor)", "click", function (evt) {
           var href = $(this).attr("href");
           var protocol = this.protocol + "//";
-          if (href.slice(0, protocol.length) !== protocol) {
+          if (href && href.slice(0, protocol.length) !== protocol) {
             evt.preventDefault();
             self.hrefController(href);
           }
