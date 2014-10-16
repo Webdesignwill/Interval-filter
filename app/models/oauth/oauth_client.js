@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose'),
-      authorizedClientIds = ['webdesignwill'];
+      authorizedClientIds = ['intervalfilter'];
 
 var OAuthClientsSchema = new mongoose.Schema({
   clientId: String,

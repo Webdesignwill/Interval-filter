@@ -9,37 +9,51 @@ define([
 
   var Modal = Backbone.View.extend({
 
-    interests : {
-      'modal:open' : function open (event, options) {
-        event.data.load(options);
-      },
-      'modal:close' : function close (event, options) {
-        event.data.close();
-      }
-    },
+    subView : {},
 
     initialize : function () {
-      App.$broker.on(this.interests, this);
+      var self = this;
+      App.$broker.on('modal:open', function (event, options) {
+        self.load(options);
+      });
+      App.$broker.on('modal:close', function (event) {
+        self.close();
+      });
+      this.$el.on('hidden.bs.modal', function (e) {
+        self.close();
+      });
+
       this.render();
       this.setElements();
     },
 
     setElements : function () {
-      this.$modalContent = this.$el.find('.modal-content');
+      this.$modalBody = this.$el.find('.modal-body');
     },
 
     load : function (view) {
       var self = this;
       require([view + 'View'], function (View) {
-        var view = new View();
-        self.$modalContent.html(view.render().el);
+        var view = new View({
+          el : self.$modalBody,
+          cb : function closeModal () {
+            this.$el.modal('hide');
+          }
+        });
+        self.subView = view;
       });
+
+      this.$el.modal();
     },
 
     render : function () {
       this.$el.html(template);
-      // this.$el.modal(options);
       return this;
+    },
+
+    close : function () {
+      if(this.subView.close) this.subView.close();
+      this.$el.modal('hide');
     }
   });
 

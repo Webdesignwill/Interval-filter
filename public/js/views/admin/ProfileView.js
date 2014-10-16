@@ -5,28 +5,28 @@ define([
 
   "use strict";
 
-  var Login = Backbone.View.extend({
+  var Profile = Backbone.View.extend({
 
-    initialize : function (options) {
-      this.options = options;
+    initialize : function () {
       this.render();
     },
 
     render : function () {
 
       App.Forms.make({
-        name : 'Login',
+        name : 'Profile',
         el : this.$el
-      }, this.login);
+      }, this.put);
 
       return this;
     },
 
-    login : function (model) {
-      var self = this;
-      App.User.login({
-        email : model.get('email'),
-        password : model.get('password')
+    put : function (model) {
+      App.User.put({
+        displayname : model.get('displayname'),
+        company : model.get('company'),
+        firstname : model.get('firstname'),
+        lastname : model.get('lastname')
       }, function (result, data, status) {
         if(result) {return App.$broker.trigger('modal:close'); }
       });
@@ -39,6 +39,6 @@ define([
 
   });
 
-  return Login;
+  return Profile;
 
 });

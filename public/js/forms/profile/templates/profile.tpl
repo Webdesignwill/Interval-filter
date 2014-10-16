@@ -1,21 +1,23 @@
-<h2>{{displayname}}'s Profile</h2>
-<p class="intro">Your registered email is {{email}}</p>
-<label>
-  <input tab-index="1" type="text" placeholder="{{displayname}}" name="displayname" validate />
-</label>
-<label>
-  <input tab-index="2" type="text" placeholder="{{company}}" name="company" validate />
-</label>
-<label>
-  <input tab-index="3" type="text" placeholder="{{firstname}}" name="firstname" validate />
-</label>
-<label>
-  <input tab-index="4" type="text" placeholder="{{lastname}}" name="lastname" validate />
-</label>
-<div class="grid-40 right">
-  <button tab-index="5" class="grid-100">Submit</button>
-</div>
-
-<div class="grid-100 left additional-form-text">
-  <p><a href="" id="delete-user" class="grid-100 message warning">Delete {{displayname}}</a></p>
-</div>
+<h3>{{displayname}}'s Profile</h3>
+<form role="form" class="clearfix">
+  <div class="form-group">
+    <label class="control-label" for="displayname-field">Display name</label>
+    <input type="text" class="form-control" id="displayname-field" name="displayname" placeholder="{{displayname}}" />
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="company-field">Company details</label>
+    <input type="text" class="form-control" id="company-field" name="company" placeholder="{{company}}" />
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="firstname-field">First name</label>
+    <input type="text" class="form-control" id="firstname-field" name="firstname" placeholder="{{firstname}}" />
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="lastname-field">Last name</label>
+    <input type="text" class="form-control" id="lastname-field" name="lastname" placeholder="{{lastname}}" />
+  </div>
+  <div class="form-group">
+    <button class="pull-left btn btn-danger delete-user">Delete {{displayname}}</button>
+    <button type="submit" class="pull-right btn btn-primary">Submit</button>
+  </div>
+</form>

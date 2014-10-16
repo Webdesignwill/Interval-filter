@@ -5,8 +5,7 @@ define(function (require, exports, module) {
       context                                         : 'siteify_forms',
       paths : {
 
-        Backbone                                    : '../libs/backbone/backbone-min',
-        text                                             : '../libs/require/text-min',
+        text                                             : '../libs/require/text.min',
         handlebars                                  : '../libs/handlebars/handlebars',
 
         Forms                                          : 'Forms',

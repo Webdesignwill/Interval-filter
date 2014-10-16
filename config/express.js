@@ -24,7 +24,7 @@ module.exports = function (app, config) {
         .use(bodyParser());
 
   app.use(session({
-    secret: 'intervalfilteristhemostawesomefilteriveeverseen',
+    secret: 'intervalfilteristhebestfilterintheworld',
       store: new mongoStore({ url: config.db, collection: 'sessions'})
     })
   );

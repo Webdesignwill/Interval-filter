@@ -6,7 +6,7 @@ define([
 
   "use strict";
 
-  var RegisterForm = Backbone.Forms.extend({
+  var RegisterForm = Backbone.View.extend({
 
     formEls : {},
     events : {
@@ -47,16 +47,25 @@ define([
 
     setFormEls : function () {
 
-      var validatables = this.$el.find('[validate]');
+      var validation = this.model.validation,
+            $el,
+            validatables = [];
+
+      for(var key in validation) {
+        $el = this.$el.find('[name="' + key + '"]');
+        if($el) validatables.push($el);
+      }
 
       for(var i = 0; i<validatables.length; i++) {
         var $validatable = $(validatables[i]),
-              $label = $validatable.closest('label');
+              $formGroup = $validatable.closest('.form-group'),
+              $label = $validatable.prev('label');
 
         this.formEls[$validatable.attr('name')] = {
           $formEl : $validatable,
           $label : $label,
-          $inlineError : $label.find('.inline-error')
+          labelText : $label.html(),
+          $formGroup : $formGroup
         };
       }
     },
@@ -64,8 +73,8 @@ define([
     updateErrors : function (isValid, errors) {
       this.$el[!isValid ? 'addClass' : 'removeClass']('invalid');
       for(var key in this.formEls) {
-        this.formEls[key].$label[errors[key] ? 'addClass' : 'removeClass']('invalid');
-        this.formEls[key].$inlineError.html(errors[key] ? errors[key] : '');
+        this.formEls[key].$formGroup[errors[key] ? 'addClass' : 'removeClass']('has-error');
+        this.formEls[key].$label.html(errors[key] ? errors[key] : this.formEls[key].labelText);
       }
     }
 

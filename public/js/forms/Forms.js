@@ -1,10 +1,13 @@
 
-define(['require'], function (require) {
+define([
+  'require'
+], function (require) {
 
   "use strict";
 
-  var Forms = function () {
-    this.make = function (options, callback) {
+  var Forms = Backbone.Model.extend({
+
+    make : function (options, callback) {
       require([options.name + 'Form'], function (Form) {
         var form = new Form({
           el : options.el,
@@ -12,8 +15,9 @@ define(['require'], function (require) {
           displayAttrs : options.displayAttrs
         });
       });
-    };
-  };
+    }
+
+  });
 
   return new Forms();
 

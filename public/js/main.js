@@ -18,6 +18,7 @@ var base_require = require.config({
     handlebars                                : 'libs/handlebars/handlebars',
     text                                           : 'libs/require/text.min',
     domReady                                 : 'libs/require/domReady',
+    bootstrap                                  : 'libs/bootstrap/bootstrap.min',
 
     App                                            : 'app',
 
@@ -36,6 +37,8 @@ var base_require = require.config({
     ListParentView                           : 'views/filteredList/ListParentView',
 
     LoginView                                 : 'views/admin/LoginView',
+    RegisterView                             : 'views/admin/RegisterView',
+    ProfileView                                : 'views/admin/ProfileView',
 
     DescriptionView                        : 'views/description/DescriptionView',
 
@@ -45,7 +48,9 @@ var base_require = require.config({
     ScalesCollection                        : 'collections/ScalesCollection',
     SelectionCollection                   : 'collections/SelectionCollection',
 
-    ScaleModel                                : 'models/ScaleModel'
+    ScaleModel                                : 'models/ScaleModel',
+    UserModel                                 : 'models/UserModel',
+    Oauth2Model                             : 'models/Oauth2Model'
 
   },
   shim : {
@@ -55,9 +60,13 @@ var base_require = require.config({
     },
     'handlebars' : {
       exports: 'Handlebars'
+    },
+    'bootstrap' : {
+      deps : ['jquery'],
+      exports : 'bootstrap'
     }
   },
-  deps : ['jquery', 'underscore', 'App', 'domReady', 'Validation'],
+  deps : ['jquery', 'underscore', 'App', 'domReady', 'bootstrap', 'Validation'],
   callback : function ($, _, App, domReady) {
 
     // Mix in the validation for all models

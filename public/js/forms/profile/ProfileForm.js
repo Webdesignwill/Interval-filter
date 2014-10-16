@@ -1,17 +1,19 @@
 
 define([
+  'Forms',
   'ProfileModel',
   'handlebars',
   'text!profile/templates/profile.tpl'
-], function (ProfileModel, handlebars, template) {
+], function (Forms, ProfileModel, handlebars, template) {
 
   "use strict";
 
-  var ProfileForm = Backbone.Forms.extend({
+  var ProfileForm = Backbone.View.extend({
 
     formEls : {},
     events : {
-      'submit' : 'submit'
+      'submit' : 'submit',
+      'click .delete-user' : 'delete'
     },
 
     initialize : function (options) {
@@ -28,7 +30,7 @@ define([
     render : function () {
 
       var tpl = handlebars.compile(template);
-      var compiled = tpl(this.options.displayAttrs);
+      var compiled = tpl(Forms.get('User').attributes);
 
       this.$el.html(compiled);
 
@@ -36,22 +38,23 @@ define([
       return this;
     },
 
+    delete : function (e) {
+      e.preventDefault();
+      Forms.get('User').deleteMe(function (result, data, status) {
+        if(result) {return Forms.get('$broker').trigger('modal:close'); }
+      });
+    },
+
     submit : function (e) {
       e.preventDefault();
 
-      var user = {};
-      for(var key in this.model.attributes) {
-        if(this.el[key] && this.el[key].value.length > 0) {
-          user[key] = this.el[key].value;
-        }
+      var postData = {}, User = Forms.get('User'), val;
+      for(var key in this.formEls) {
+        val = this.formEls[key].$formEl.val();
+        postData[key] = !val ? User.get(key) : val;
       }
 
-      this.model.set({
-        displayname : this.formEls.displayname.$formEl.val(),
-        company : this.formEls.company.$formEl.val(),
-        firstname : this.formEls.firstname.$formEl.val(),
-        lastname : this.formEls.lastname.$formEl.val()
-      }, {validate : true});
+      this.model.set(postData, {validate : true});
 
       if(this.model.isValid()) {
         this.options.callback(this.model);
@@ -60,16 +63,25 @@ define([
 
     setFormEls : function () {
 
-      var validatables = this.$el.find('[validate]');
+      var validation = this.model.validation,
+            $el,
+            validatables = [];
+
+      for(var key in validation) {
+        $el = this.$el.find('[name="' + key + '"]');
+        if($el) validatables.push($el);
+      }
 
       for(var i = 0; i<validatables.length; i++) {
         var $validatable = $(validatables[i]),
-              $label = $validatable.closest('label');
+              $formGroup = $validatable.closest('.form-group'),
+              $label = $validatable.prev('label');
 
         this.formEls[$validatable.attr('name')] = {
           $formEl : $validatable,
           $label : $label,
-          $inlineError : $label.find('.inline-error')
+          labelText : $label.html(),
+          $formGroup : $formGroup
         };
       }
     },
@@ -77,8 +89,8 @@ define([
     updateErrors : function (isValid, errors) {
       this.$el[!isValid ? 'addClass' : 'removeClass']('invalid');
       for(var key in this.formEls) {
-        this.formEls[key].$label[errors[key] ? 'addClass' : 'removeClass']('invalid');
-        this.formEls[key].$inlineError.html(errors[key] ? errors[key] : '');
+        this.formEls[key].$formGroup[errors[key] ? 'addClass' : 'removeClass']('has-error');
+        this.formEls[key].$label.html(errors[key] ? errors[key] : this.formEls[key].labelText);
       }
     }
 

@@ -1,19 +1,14 @@
-
-<h2>Login</h2>
-<p class="intro">Login to access your special place</p>
-<label>
-  <p class="inline-error"></p>
-  <input tab-index="1" type="email" placeholder="Email" name="email" validate />
-</label>
-<label>
-  <p class="inline-error"></p>
-  <input tab-index="2" type="password" placeholder="Password" name="password" validate />
-</label>
-<div class="grid-40 right">
-  <button type="submit" tab-index="3" class="grid-100">Login</button>
-</div>
-
-<div class="grid-100 left additional-form-text">
-  <p><a href="modal:open:register">Need an account?</a></p>
-  <p><a href="#">Forgot your details?</a></p>
-</div>
+<h3>Login</h3>
+<form role="form" class="clearfix">
+  <div class="form-group">
+    <label class="control-label" for="email-field">Enter your email address</label>
+    <input type="email" class="form-control" id="email-field" name="email" placeholder="Email" />
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="password-field">Enter your password</label>
+    <input type="password" class="form-control" id="password-field" name="password" placeholder="Password" />
+  </div>
+  <div class="form-group pull-right">
+    <button type="submit" class="btn btn-primary">Login</button>
+  </div>
+</form>
