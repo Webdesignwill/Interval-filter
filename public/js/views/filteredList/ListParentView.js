@@ -1,9 +1,11 @@
 
 define([
+  'handlebars',
   'ListItemView',
   'SelectionCollection',
-  'ScalesCollection'
-], function (ListItemView, SelectionCollection, ScalesCollection) {
+  'ScalesCollection',
+  'text!views/filteredList/templates/listParent.tpl'
+], function (handlebars, ListItemView, SelectionCollection, ScalesCollection, template) {
 
   "use strict";
 
@@ -18,9 +20,12 @@ define([
 
     render : function () {
 
-      if(ScalesCollection.getMatchCount() === 0) {
-        return this.$el.html('<p class="text-info">There are no matches to display</p>');
-      }
+      var tpl = handlebars.compile(template);
+      var compiled = tpl({
+        count : !ScalesCollection.getMatchCount()
+      });
+
+      this.$el.html(compiled);
 
       var df = document.createDocumentFragment();
       ScalesCollection.each(function (model, index, collection) {
@@ -31,7 +36,9 @@ define([
           df.appendChild(liv.render().el);
         }
       });
-      this.$el.html(df);
+
+      this.$el.append(df);
+
       return this;
     }
   });
