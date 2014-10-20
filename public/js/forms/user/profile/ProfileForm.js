@@ -3,7 +3,7 @@ define([
   'Forms',
   'ProfileModel',
   'handlebars',
-  'text!profile/templates/profile.tpl'
+  'text!user/profile/templates/profile.tpl'
 ], function (Forms, ProfileModel, handlebars, template) {
 
   "use strict";

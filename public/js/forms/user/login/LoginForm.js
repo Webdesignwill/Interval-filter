@@ -1,12 +1,12 @@
 
 define([
-  'RegisterModel',
-  'text!register/templates/register.tpl'
-], function (RegisterModel, template) {
+  'LoginModel',
+  'text!user/login/templates/login.tpl'
+], function (LoginModel, template) {
 
   "use strict";
 
-  var RegisterForm = Backbone.View.extend({
+  var LoginForm = Backbone.View.extend({
 
     formEls : {},
     events : {
@@ -16,7 +16,7 @@ define([
     initialize : function (options) {
 
       this.options = options;
-      this.model = new RegisterModel();
+      this.model = new LoginModel();
 
       this.listenTo(this.model, 'validated', function (isValid, model, errors) {
         this.updateErrors(isValid, errors);
@@ -35,9 +35,7 @@ define([
 
       this.model.set({
         email : this.formEls.email.$formEl.val(),
-        displayname : this.formEls.displayname.$formEl.val(),
-        password : this.formEls.password.$formEl.val(),
-        confirmpassword : this.formEls.confirmpassword.$formEl.val()
+        password : this.formEls.password.$formEl.val()
       }, {validate : true});
 
       if(this.model.isValid()) {
@@ -80,6 +78,6 @@ define([
 
   });
 
-  return RegisterForm;
+  return LoginForm;
 
 });

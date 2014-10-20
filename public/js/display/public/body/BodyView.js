@@ -1,6 +1,7 @@
 
 define([
   'App',
+  'AddIntervalView',
   'NavBarView',
   'FretboardView',
   'MatchCountView',
@@ -9,7 +10,7 @@ define([
   'DescriptionView',
   'ModalView',
   'text!display/public/body/templates/body.tpl'
-], function (App, NavBarView, FretboardView, MatchCountView, ControlBoardView, ListParentView, DescriptionView, ModalView, template) {
+], function (App, AddIntervalView, NavBarView, FretboardView, MatchCountView, ControlBoardView, ListParentView, DescriptionView, ModalView, template) {
 
   "use strict";
 
@@ -18,14 +19,24 @@ define([
     el : 'body',
 
     initialize : function () {
+
+      this.listenTo(App.User, 'change:loggedin', function (model, att, something) {
+        this.toggleClass(att, 'loggedin');
+      }, this);
+
       this.render();
       this.setElements();
       this.renderPageComponents();
       this.delegateAnchorClickEvent();
     },
 
+    toggleClass : function (att, cls) {
+      this.$el[att ? 'addClass' : 'removeClass'](cls);
+    },
+
     setElements : function () {
       this.$navBar = this.$el.find('#navbar');
+      this.$addInterval = this.$el.find('#add-interval');
       this.$fretBoard = this.$el.find('#fret-board');
       this.$controlBoard = this.$el.find('#control-board');
       this.$matchCountContainer = this.$el.find('#match-count-container');
@@ -58,6 +69,10 @@ define([
 
       new ListParentView({
         el : this.$filteredList
+      });
+
+      new AddIntervalView({
+        el : this.$addInterval
       });
 
       new DescriptionView({

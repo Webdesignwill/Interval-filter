@@ -2,8 +2,8 @@
 define([
   'Backbone',
   'require',
-  'ScalesCollection'
-], function (Backbone, require, ScalesCollection) {
+  'IntervalsCollection'
+], function (Backbone, require, IntervalsCollection) {
 
   "use strict";
 
@@ -16,12 +16,12 @@ define([
     },
 
     init : function () {
-      this.loadScales(this.loadBody);
+      this.loadIntervals(this.loadBody);
       this.loadUserModel();
     },
 
-    loadScales : function (done) {
-      ScalesCollection.fetch({success : done});
+    loadIntervals : function (done) {
+      IntervalsCollection.fetch({success : done});
     },
 
     loadBody : function () {

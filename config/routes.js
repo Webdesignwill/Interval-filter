@@ -16,11 +16,11 @@ module.exports = function (app) {
   app.put('/api/user/me', app.oauth.authorise(), Controllers.User.putMe);
   app.post('/api/user/logout', Controllers.User.logout);
 
-  /* Scale
+  /* Interval
   ==================================== */
-  app.post('/api/scale/add', Controllers.Scale.add);
-  app.get('/api/scale/all', Controllers.Scale.all);
-  app.put('/api/scale/update', Controllers.Scale.update);
-  app.delete('/api/scale/delete', Controllers.Scale.delete);
+  app.post('/api/interval/add', Controllers.Interval.add);
+  app.get('/api/interval/all', Controllers.Interval.all);
+  app.put('/api/interval/update', Controllers.Interval.update);
+  app.delete('/api/interval/delete', Controllers.Interval.delete);
 
 };

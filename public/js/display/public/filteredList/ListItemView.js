@@ -1,10 +1,10 @@
 
 define([
   'App',
-  'ScalesCollection',
+  'IntervalsCollection',
   'handlebars',
   'text!display/public/filteredList/templates/listItem.tpl'
-], function (App, ScalesCollection, handlebars, template) {
+], function (App, IntervalsCollection, handlebars, template) {
 
   "use strict";
 
@@ -19,7 +19,7 @@ define([
 
     initialize : function () {
       var self = this;
-      this.listenTo(ScalesCollection, 'change:selected', function (model) {
+      this.listenTo(IntervalsCollection, 'change:selected', function (model) {
         if(model.get('_id') !== this.model.get('_id')) return this.clearSelection();
       }, this);
 
@@ -52,7 +52,14 @@ define([
       this.toggleClass();
 
       return this;
+    },
+
+    close : function () {
+      this.stopListening();
+      this.off();
+      this.remove();
     }
+
   });
 
   return ListItemView;

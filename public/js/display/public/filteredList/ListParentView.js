@@ -3,44 +3,62 @@ define([
   'handlebars',
   'ListItemView',
   'SelectionCollection',
-  'ScalesCollection',
-  'text!display/public/filteredList/templates/listParent.tpl'
-], function (handlebars, ListItemView, SelectionCollection, ScalesCollection, template) {
+  'IntervalsCollection'
+], function (handlebars, ListItemView, SelectionCollection, IntervalsCollection) {
 
   "use strict";
 
   var ListParentView = Backbone.View.extend({
 
+    subViews : [],
+
     initialize : function () {
       this.listenTo(SelectionCollection, 'updated', function (model, options) {
-        this.render();
+        if(this.toggleNoResults()) return;
+        this.clearSubViews();
       });
       this.render();
+      this.toggleNoResults();
     },
 
-    render : function () {
+    toggleNoResults : function () {
+      if(IntervalsCollection.getMatchCount() === 0) {
+        return this.$el.html('<p class="text-info">There are no matches to display</p>');
+      }
+      return null;
+    },
 
-      var tpl = handlebars.compile(template);
-      var compiled = tpl({
-        count : !ScalesCollection.getMatchCount()
-      });
+    clearSubViews : function () {
+      for(var i = 0;i<this.subViews.length;i++) {
+        this.subViews[i].close();
+      }
+      this.subViews = [];
+      this.renderList();
+    },
 
-      this.$el.html(compiled);
+    renderList : function () {
 
-      var df = document.createDocumentFragment();
-      ScalesCollection.each(function (model, index, collection) {
+      var df = document.createDocumentFragment(),
+            self = this;
+
+      IntervalsCollection.each(function (model, index, collection) {
         if(model.get('match')) {
           var liv = new ListItemView({
             model : model
           });
+          self.subViews.push(liv);
           df.appendChild(liv.render().el);
         }
       });
 
-      this.$el.append(df);
+      this.$el.html(df);
 
+    },
+
+    render : function () {
       return this;
     }
+
   });
 
   return ListParentView;

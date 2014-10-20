@@ -22,6 +22,7 @@ var base_require = require.config({
 
     App                                            : 'app',
 
+    /* Public */
     BodyView                                  : 'display/public/body/BodyView',
 
     FretboardView                           : 'display/public/fretboard/FretboardView',
@@ -36,21 +37,24 @@ var base_require = require.config({
     ListItemView                              : 'display/public/filteredList/ListItemView',
     ListParentView                           : 'display/public/filteredList/ListParentView',
 
-    LoginView                                 : 'display/admin/user/LoginView',
-    RegisterView                             : 'display/admin/user/RegisterView',
-    ProfileView                                : 'display/admin/user/ProfileView',
-
     DescriptionView                        : 'display/public/description/DescriptionView',
 
     ControlBoardView                      : 'display/public/controlBoard/ControlBoardView',
     ButtonView                                : 'display/public/buttons/ButtonView',
 
-    ScalesCollection                        : 'collections/ScalesCollection',
+    IntervalsCollection                    : 'collections/IntervalsCollection',
     SelectionCollection                   : 'collections/SelectionCollection',
 
-    ScaleModel                                : 'models/ScaleModel',
+    IntervalModel                            : 'models/IntervalModel',
     UserModel                                 : 'models/UserModel',
-    Oauth2Model                             : 'models/Oauth2Model'
+    Oauth2Model                             : 'models/Oauth2Model',
+
+    /* Admin */
+    LoginView                                 : 'display/admin/user/LoginView',
+    RegisterView                             : 'display/admin/user/RegisterView',
+    ProfileView                                : 'display/admin/user/ProfileView',
+
+    AddIntervalView                        : 'display/admin/intervals/AddIntervalView'
 
   },
   shim : {

@@ -1,5 +1,5 @@
 <header id="navbar" class="navbar navbar-default navbar-static-top" role="navigation"></header>
-<main role="main" id="scale" class="scale container-fluid">
+<main role="main" id="interval" class="interval container-fluid">
   <header class="head row">
     <ul id="fret-board" class="fret-board"></ul>
   </header>
@@ -9,6 +9,7 @@
   <section class="match-content panel panel-default">
     <div id="match-count-container" class="panel-heading"></div>
     <div class="panel-body">
+      <div id="add-interval" class="add-interval admin-view well col-md-12"></div>
       <div id="filtered-list" class="filtered-list list-group col-md-6"></div>
       <div id="selection-description" class="selection-description col-md-6"></div>
     </div>

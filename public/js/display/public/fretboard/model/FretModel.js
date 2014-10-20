@@ -1,8 +1,8 @@
 
 define([
   'App',
-  'ScalesCollection'
-], function (App, ScalesCollection) {
+  'IntervalsCollection'
+], function (App, IntervalsCollection) {
 
   "use strict";
 
@@ -13,7 +13,7 @@ define([
     },
 
     initialize : function () {
-      this.listenTo(ScalesCollection, 'change:selected', function (model) {
+      this.listenTo(IntervalsCollection, 'change:selected', function (model) {
         this.matchNumber(model);
       }, this);
 

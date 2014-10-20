@@ -1,10 +1,10 @@
 
 define([
   'App',
-  'ScalesCollection',
+  'IntervalsCollection',
   'handlebars',
   'text!display/public/description/templates/description.tpl'
-], function (App, ScalesCollection, handlebars, template) {
+], function (App, IntervalsCollection, handlebars, template) {
 
   "use strict";
 
@@ -12,7 +12,7 @@ define([
 
     initialize : function () {
       var self = this;
-      this.listenTo(ScalesCollection, 'change:selected', function (model) {
+      this.listenTo(IntervalsCollection, 'change:selected', function (model) {
         this.render(model);
       }, this);
 

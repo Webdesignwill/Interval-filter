@@ -1,10 +1,10 @@
 
 define([
-  'ScalesCollection',
+  'IntervalsCollection',
   'SelectionCollection',
   'handlebars',
   'text!display/public/fretboard/templates/fret.tpl'
-], function (ScalesCollection, SelectionCollection, handlebars, template) {
+], function (IntervalsCollection, SelectionCollection, handlebars, template) {
 
   "use strict";
 

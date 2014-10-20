@@ -19,11 +19,11 @@ body {
   display:table;
   clear:both;
 }
-.scale ul.fret-board {
+.interval ul.fret-board {
   height:150px;
   margin-bottom:0;
 }
-.scale .fret-board li {
+.interval .fret-board li {
   -webkit-transition: background-color 0.2s linear;
   -moz-transition: background-color 0.2s linear;
   -o-transition: background-color 0.2s linear;
@@ -33,7 +33,7 @@ body {
   font-size:20px;
   text-align:center;
 }
-.scale .fret-board li .interval{
+.interval .fret-board li .interval{
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
   -o-transition: color 0.2s linear;
@@ -44,20 +44,20 @@ body {
   position:relative;
   top:40%;
 }
-.scale .fret-board li:hover {
+.interval .fret-board li:hover {
   background:#d9edf7;
   cursor: pointer;
 }
-.scale .fret-board li:hover .interval {
+.interval .fret-board li:hover .interval {
   color : #000000;
 }
-.scale .fret-board li.selected .interval {
+.interval .fret-board li.selected .interval {
   color : #000000;
 }
-.scale .fret-board .highlight {
+.interval .fret-board .highlight {
   background:#dff0d8;
 }
-.scale .fret-board .selected {
+.interval .fret-board .selected {
   background:#d9edf7;
 }
 .match-content {
@@ -81,4 +81,17 @@ body {
 }
 .selection-description h3 {
   margin-top:0;
+}
+
+/* Admin stuff */
+.add-interval {
+  margin-bottom:10px;
+}
+
+.admin-view {
+  display:block;
+}
+
+body.loggedin .admin-view {
+  display:block;
 }

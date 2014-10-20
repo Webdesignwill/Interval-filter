@@ -1,13 +1,13 @@
 
 define([
-  'ScaleModel'
-], function (ScaleModel) {
+  'IntervalModel'
+], function (IntervalModel) {
 
   "use strict";
 
-  var ScalesCollection = Backbone.Collection.extend({
-    url : '/api/scale/all',
-    model : ScaleModel,
+  var IntervalsCollection = Backbone.Collection.extend({
+    url : '/api/interval/all',
+    model : IntervalModel,
 
     getMatchCount : function () {
       var count = _.countBy(this.models, function (model) {
@@ -34,6 +34,6 @@ define([
     }
   });
 
-  return new ScalesCollection();
+  return new IntervalsCollection();
 
 });

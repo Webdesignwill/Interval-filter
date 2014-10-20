@@ -10,14 +10,19 @@ define(function (require, exports, module) {
 
         Forms                                          : 'Forms',
 
-        // Forms
-        LoginForm                                    : 'login/LoginForm',
-        LoginModel                                  : 'login/models/LoginModel',
-        ProfileForm                                  : 'profile/ProfileForm',
-        ProfileModel                                 : 'profile/models/ProfileModel',
-        RegisterForm                                : 'register/RegisterForm',
-        RegisterModel                               : 'register/models/RegisterModel'
-      }
+        // User
+        LoginForm                                    : 'user/login/LoginForm',
+        LoginModel                                  : 'user/login/models/LoginModel',
+        ProfileForm                                  : 'user/profile/ProfileForm',
+        ProfileModel                                 : 'user/profile/models/ProfileModel',
+        RegisterForm                                : 'user/register/RegisterForm',
+        RegisterModel                               : 'user/register/models/RegisterModel',
+
+        // Intervals
+        AddIntervalForm                            : 'intervals/add/AddIntervalForm',
+        AddIntervalModel                          : 'intervals/add/models/AddIntervalModel'
+      },
+      deps : ['Forms']
     };
   };
 });

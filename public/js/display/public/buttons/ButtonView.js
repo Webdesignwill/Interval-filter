@@ -1,8 +1,8 @@
 
 define([
   'App',
-  'ScalesCollection'
-], function (App, ScalesCollection) {
+  'IntervalsCollection'
+], function (App, IntervalsCollection) {
 
   "use strict";
 
@@ -27,7 +27,8 @@ define([
 
     handler : function (e) {
       e.preventDefault();
-      App.$broker.trigger(this.options.event);
+      if(this.options.event) App.$broker.trigger(this.options.event);
+      if(this.options.callback) this.options.callback();
     }
 
   });

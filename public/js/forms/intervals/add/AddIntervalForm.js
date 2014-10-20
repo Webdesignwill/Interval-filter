@@ -1,12 +1,12 @@
 
 define([
-  'LoginModel',
-  'text!login/templates/login.tpl'
-], function (LoginModel, template) {
+  'AddIntervalModel',
+  'text!intervals/add/templates/add.tpl'
+], function (AddIntervalModel, template) {
 
   "use strict";
 
-  var LoginForm = Backbone.View.extend({
+  var AddInterval = Backbone.View.extend({
 
     formEls : {},
     events : {
@@ -16,7 +16,7 @@ define([
     initialize : function (options) {
 
       this.options = options;
-      this.model = new LoginModel();
+      this.model = new AddIntervalModel();
 
       this.listenTo(this.model, 'validated', function (isValid, model, errors) {
         this.updateErrors(isValid, errors);
@@ -78,6 +78,6 @@ define([
 
   });
 
-  return LoginForm;
+  return AddInterval;
 
 });

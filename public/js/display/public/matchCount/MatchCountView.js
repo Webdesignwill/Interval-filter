@@ -1,9 +1,9 @@
 
 define([
-  'ScalesCollection',
+  'IntervalsCollection',
   'SelectionCollection',
   'text!display/public/matchCount/templates/matchCount.tpl'
-], function (ScalesCollection, SelectionCollection, template) {
+], function (IntervalsCollection, SelectionCollection, template) {
 
   "use strict";
 
@@ -22,14 +22,14 @@ define([
     },
 
     updateCount : function () {
-      this.$matchCount.html(ScalesCollection.getMatchCount());
+      this.$matchCount.html(IntervalsCollection.getMatchCount());
     },
 
     render : function () {
       this.$el.html(template);
       this.setElements();
 
-      this.$totalCount.html(ScalesCollection.length);
+      this.$totalCount.html(IntervalsCollection.length);
       this.updateCount();
       return this;
     }

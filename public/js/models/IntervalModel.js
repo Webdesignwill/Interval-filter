@@ -7,7 +7,7 @@ define([
 
   "use strict";
 
-  var ScaleModel = Backbone.Model.extend({
+  var IntervalModel = Backbone.Model.extend({
 
     defaults : {
       selected : false,
@@ -15,9 +15,9 @@ define([
     },
 
     urls : {
-      add : '/api/scale/add',
-      update : '/api/scale/update',
-      delete : '/api/scale/delete'
+      add : '/api/interval/add',
+      update : '/api/interval/update',
+      delete : '/api/interval/delete'
     },
 
     initialize : function () {
@@ -106,6 +106,6 @@ define([
 
   });
 
-  return ScaleModel;
+  return IntervalModel;
 
 });

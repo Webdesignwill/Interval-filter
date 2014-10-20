@@ -8,6 +8,6 @@ module.exports.OAuthClientsModel = require('./oauth/oauth_client');
 ================================= */
 module.exports.User = require('./user');
 
-/* Scale
+/* Interval
 ================================= */
-module.exports.Scale = require('./scale');
+module.exports.Interval = require('./interval');

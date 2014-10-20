@@ -1,44 +1,44 @@
 
-var Scale = require('./../models').Scale;
+var Interval = require('./../models').Interval;
 
-/* Add scale
+/* Add interval
 ============================= */
 module.exports.add = function (req, res, next) {
-  Scale.add(req.body, function (err, scale) {
+  Interval.add(req.body, function (err, interval) {
     if (err) return next(err);
     res.send(200);
   });
 };
 
-/* Return all scales
+/* Return all intervals
 ============================= */
 module.exports.all = function (req, res) {
-  Scale.find(null, null, {sort : {'order' : 1}}, function (err, scales) {
+  Interval.find(null, null, {sort : {'order' : 1}}, function (err, intervals) {
     if (err) res.send(err);
-    res.send(200, scales);
+    res.send(200, intervals);
   });
 };
 
-/* Update me a scale
+/* Update me a interval
 ============================= */
 module.exports.update = function (req, res, next) {
-  Scale.findOne({ name : req.scale.id }, function (err, scale) {
+  Interval.findOne({ name : req.interval.id }, function (err, interval) {
     if (err) res.send(err);
     for(var key in req.body) {
-      scale[key] = req.body[key];
+      interval[key] = req.body[key];
     }
-    scale.save(function (err, scale) {
+    interval.save(function (err, interval) {
       if (err) res.send(err);
-      res.send(200, scale);
+      res.send(200, interval);
     });
   });
 };
 
-/* Delete scale
+/* Delete interval
 ============================= */
 module.exports.delete = function (req, res, next) {
-  Scale.findOne({ _id : req.body._id }, function (err, scale) {
-    Scale.findByIdAndRemove(scale.id, function (err) {
+  Interval.findOne({ _id : req.body._id }, function (err, interval) {
+    Interval.findByIdAndRemove(interval.id, function (err) {
       if (err) res.send(err);
       res.send(200, {message : 'Deleted'});
     });

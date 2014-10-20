@@ -15,7 +15,8 @@ define([
       var btn = new ButtonView({
         name : 'Clear Selection',
         class : 'btn-warning',
-        event : 'clear:selection'
+        event : 'clear:selection',
+        callback : null
       });
 
       this.$el.html(btn.el);
