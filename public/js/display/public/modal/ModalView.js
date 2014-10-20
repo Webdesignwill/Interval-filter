@@ -2,7 +2,7 @@
 define([
   'App',
   'require',
-  'text!views/modal/templates/modal.tpl'
+  'text!display/public/modal/templates/modal.tpl'
 ], function (App, require, template) {
 
   "use strict";

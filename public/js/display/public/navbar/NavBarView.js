@@ -2,7 +2,7 @@
 define([
   'App',
   'handlebars',
-  'text!views/navbar/templates/navbar.tpl'
+  'text!display/public/navbar/templates/navbar.tpl'
 ], function (App, handlebars, template) {
 
   "use strict";

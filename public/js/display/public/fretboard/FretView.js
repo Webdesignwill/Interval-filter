@@ -3,7 +3,7 @@ define([
   'ScalesCollection',
   'SelectionCollection',
   'handlebars',
-  'text!views/fretboard/templates/fret.tpl'
+  'text!display/public/fretboard/templates/fret.tpl'
 ], function (ScalesCollection, SelectionCollection, handlebars, template) {
 
   "use strict";

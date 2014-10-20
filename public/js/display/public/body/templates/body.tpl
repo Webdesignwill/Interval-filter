@@ -4,7 +4,7 @@
     <ul id="fret-board" class="fret-board"></ul>
   </header>
   <div class="panel panel-default">
-    <div id="controls" class="panel-body controls"></div>
+    <div id="control-board" class="panel-body control-board"></div>
   </div>
   <section class="match-content panel panel-default">
     <div id="match-count-container" class="panel-heading"></div>

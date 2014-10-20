@@ -2,7 +2,7 @@
 define([
   'ScalesCollection',
   'SelectionCollection',
-  'text!views/matchCount/templates/matchCount.tpl'
+  'text!display/public/matchCount/templates/matchCount.tpl'
 ], function (ScalesCollection, SelectionCollection, template) {
 
   "use strict";

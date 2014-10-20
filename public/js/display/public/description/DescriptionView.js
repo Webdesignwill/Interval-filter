@@ -3,7 +3,7 @@ define([
   'App',
   'ScalesCollection',
   'handlebars',
-  'text!views/description/templates/description.tpl'
+  'text!display/public/description/templates/description.tpl'
 ], function (App, ScalesCollection, handlebars, template) {
 
   "use strict";

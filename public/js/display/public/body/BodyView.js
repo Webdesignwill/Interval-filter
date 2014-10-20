@@ -4,12 +4,12 @@ define([
   'NavBarView',
   'FretboardView',
   'MatchCountView',
-  'ControlsView',
+  'ControlBoardView',
   'ListParentView',
   'DescriptionView',
   'ModalView',
-  'text!views/body/templates/body.tpl'
-], function (App, NavBarView, FretboardView, MatchCountView, ControlsView, ListParentView, DescriptionView, ModalView, template) {
+  'text!display/public/body/templates/body.tpl'
+], function (App, NavBarView, FretboardView, MatchCountView, ControlBoardView, ListParentView, DescriptionView, ModalView, template) {
 
   "use strict";
 
@@ -27,7 +27,7 @@ define([
     setElements : function () {
       this.$navBar = this.$el.find('#navbar');
       this.$fretBoard = this.$el.find('#fret-board');
-      this.$controls = this.$el.find('#controls');
+      this.$controlBoard = this.$el.find('#control-board');
       this.$matchCountContainer = this.$el.find('#match-count-container');
       this.$filteredList = this.$el.find('#filtered-list');
       this.$selectionDescription = this.$el.find('#selection-description');
@@ -48,8 +48,8 @@ define([
         el : this.$fretBoard
       });
 
-      new ControlsView({
-        el : this.$controls
+      new ControlBoardView({
+        el : this.$controlBoard
       });
 
       new MatchCountView({

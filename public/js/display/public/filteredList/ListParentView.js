@@ -4,7 +4,7 @@ define([
   'ListItemView',
   'SelectionCollection',
   'ScalesCollection',
-  'text!views/filteredList/templates/listParent.tpl'
+  'text!display/public/filteredList/templates/listParent.tpl'
 ], function (handlebars, ListItemView, SelectionCollection, ScalesCollection, template) {
 
   "use strict";

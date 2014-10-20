@@ -22,28 +22,28 @@ var base_require = require.config({
 
     App                                            : 'app',
 
-    BodyView                                  : 'views/body/BodyView',
+    BodyView                                  : 'display/public/body/BodyView',
 
-    FretboardView                           : 'views/fretboard/FretboardView',
-    FretView                                    : 'views/fretboard/FretView',
-    FretModel                                  : 'views/fretboard/model/FretModel',
+    FretboardView                           : 'display/public/fretboard/FretboardView',
+    FretView                                    : 'display/public/fretboard/FretView',
+    FretModel                                  : 'display/public/fretboard/model/FretModel',
 
-    NavBarView                               : 'views/navbar/NavBarView',
+    NavBarView                               : 'display/public/navbar/NavBarView',
 
-    MatchCountView                       : 'views/matchCount/MatchCountView',
-    ModalView                                 : 'views/modal/ModalView',
+    MatchCountView                       : 'display/public/matchCount/MatchCountView',
+    ModalView                                 : 'display/public/modal/ModalView',
 
-    ListItemView                              : 'views/filteredList/ListItemView',
-    ListParentView                           : 'views/filteredList/ListParentView',
+    ListItemView                              : 'display/public/filteredList/ListItemView',
+    ListParentView                           : 'display/public/filteredList/ListParentView',
 
-    LoginView                                 : 'views/admin/LoginView',
-    RegisterView                             : 'views/admin/RegisterView',
-    ProfileView                                : 'views/admin/ProfileView',
+    LoginView                                 : 'display/admin/user/LoginView',
+    RegisterView                             : 'display/admin/user/RegisterView',
+    ProfileView                                : 'display/admin/user/ProfileView',
 
-    DescriptionView                        : 'views/description/DescriptionView',
+    DescriptionView                        : 'display/public/description/DescriptionView',
 
-    ControlsView                             : 'views/controls/ControlsView',
-    ButtonView                                : 'views/buttons/ButtonView',
+    ControlBoardView                      : 'display/public/controlBoard/ControlBoardView',
+    ButtonView                                : 'display/public/buttons/ButtonView',
 
     ScalesCollection                        : 'collections/ScalesCollection',
     SelectionCollection                   : 'collections/SelectionCollection',
