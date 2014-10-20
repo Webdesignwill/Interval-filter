@@ -6,7 +6,7 @@ var Interval = require('./../models').Interval;
 module.exports.add = function (req, res, next) {
   Interval.add(req.body, function (err, interval) {
     if (err) return next(err);
-    res.send(200);
+    res.send(200, interval);
   });
 };
 

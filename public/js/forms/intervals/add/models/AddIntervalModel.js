@@ -8,15 +8,15 @@ function () {
   var AddIntervalModel = Backbone.Model.extend({
 
     validation : {
-      intervalname : [{
+      name : [{
         required : true,
         msg : 'Please enter the interval name'
       }],
-      intervalnumbers : [{
+      notes : [{
         required : true,
-        msg : 'What numbers are in the interval'
+        msg : 'What notes are in the interval'
       }],
-      intervaldescription : [{
+      description : [{
         required : false,
         msg : 'Please enter an interval description'
       }]

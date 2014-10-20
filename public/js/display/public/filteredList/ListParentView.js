@@ -17,6 +17,12 @@ define([
         if(this.toggleNoResults()) return;
         this.clearSubViews();
       });
+
+      this.listenTo(IntervalsCollection, 'add', function (model, options) {
+        if(this.toggleNoResults()) return;
+        this.clearSubViews();
+      }, this);
+
       this.render();
       this.toggleNoResults();
     },

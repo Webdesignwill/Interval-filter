@@ -34,8 +34,9 @@ define([
       e.preventDefault();
 
       this.model.set({
-        email : this.formEls.email.$formEl.val(),
-        password : this.formEls.password.$formEl.val()
+        name : this.formEls.name.$formEl.val(),
+        notes : this.formEls.notes.$formEl.val(),
+        description : this.formEls.description.$formEl.val()
       }, {validate : true});
 
       if(this.model.isValid()) {

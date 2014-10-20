@@ -11,8 +11,13 @@ define([
 
     initialize : function () {
       this.listenTo(SelectionCollection, 'updated', function (model, options) {
-        this.updateCount();
+        this.updateMatchCount();
       }, this);
+
+      this.listenTo(IntervalsCollection, 'all', function (model, options) {
+        this.updateTotalCount();
+      }, this);
+
       this.render();
     },
 
@@ -21,16 +26,21 @@ define([
       this.$totalCount = this.$el.find('.total-count');
     },
 
-    updateCount : function () {
+    updateMatchCount : function () {
       this.$matchCount.html(IntervalsCollection.getMatchCount());
+    },
+
+    updateTotalCount : function () {
+      this.$totalCount.html(IntervalsCollection.length);
     },
 
     render : function () {
       this.$el.html(template);
       this.setElements();
 
-      this.$totalCount.html(IntervalsCollection.length);
-      this.updateCount();
+      this.updateMatchCount();
+      this.updateTotalCount();
+
       return this;
     }
   });

@@ -87,9 +87,11 @@ body {
 .add-interval {
   margin-bottom:10px;
 }
-
+.add-interval-form {
+  margin-top:15px;
+}
 .admin-view {
-  display:block;
+  display:none;
 }
 
 body.loggedin .admin-view {

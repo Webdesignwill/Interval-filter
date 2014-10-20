@@ -1,7 +1,9 @@
 
 define([
-  'App'
-], function (App) {
+  'App',
+  'IntervalsCollection',
+  'text!display/admin/intervals/templates/addInterval.tpl'
+], function (App, IntervalsCollection, template) {
 
   "use strict";
 
@@ -13,21 +15,23 @@ define([
 
     render : function () {
 
+      this.$el.html(template);
+
       App.Forms.make({
         name : 'AddInterval',
-        el : this.$el
+        el : this.$el.find('#add-interval-form')
       }, this.addInterval);
 
       return this;
     },
 
     addInterval : function (model) {
-      App.User.register({
-        email : model.get('email'),
-        displayname : model.get('displayname'),
-        password : model.get('password')
+      IntervalsCollection.addInterval({
+        name : model.get('name'),
+        notes : model.get('notes'),
+        description : model.get('description')
       }, function (result, data, status) {
-        if(result) {return App.$broker.trigger('modal:close'); }
+        if(result) {return; }
       });
     }
 
