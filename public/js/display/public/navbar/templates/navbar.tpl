@@ -10,7 +10,7 @@
   {{else}}
     <ul class="nav navbar-nav navbar-right">
       <li><a href="modal:open:Login">Login</a></li>
-      <li><a href="modal:open:Register">Register</a></li>
+      <!-- <li><a href="modal:open:Register">Register</a></li> -->
     </ul>
   {{/if}}
 </div>
