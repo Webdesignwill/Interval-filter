@@ -4,6 +4,6 @@
 </div>
 <div class="interval-options pull-right admin-view">
   <button class="delete-interval btn btn-danger">
-    <span class="glyphicon glyphicon-trash"></span>
+    <span class="delete-interval glyphicon glyphicon-trash"></span>
   </button>
 </div>

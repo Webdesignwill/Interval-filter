@@ -49,7 +49,7 @@ define([
     },
 
     handler : function (e) {
-      if(e.target === this.el) {
+      if(e.target.className.indexOf('delete-interval') === -1) {
         this.model.set({
           selected : this.model.get('selected') ? false : true,
           trash : false
