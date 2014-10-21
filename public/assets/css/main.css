@@ -84,10 +84,10 @@ body {
 }
 
 /* Admin stuff */
-.add-interval {
+.interval-management {
   margin-bottom:10px;
 }
-.add-interval-form {
+.interval-management-form {
   margin-top:15px;
 }
 .admin-view {

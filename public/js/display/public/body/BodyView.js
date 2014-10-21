@@ -1,7 +1,7 @@
 
 define([
   'App',
-  'AddIntervalView',
+  'IntervalManagementView',
   'NavBarView',
   'FretboardView',
   'MatchCountView',
@@ -10,7 +10,7 @@ define([
   'DescriptionView',
   'ModalView',
   'text!display/public/body/templates/body.tpl'
-], function (App, AddIntervalView, NavBarView, FretboardView, MatchCountView, ControlBoardView, ListParentView, DescriptionView, ModalView, template) {
+], function (App, IntervalManagementView, NavBarView, FretboardView, MatchCountView, ControlBoardView, ListParentView, DescriptionView, ModalView, template) {
 
   "use strict";
 
@@ -36,7 +36,7 @@ define([
 
     setElements : function () {
       this.$navBar = this.$el.find('#navbar');
-      this.$addInterval = this.$el.find('#add-interval');
+      this.$intervalManagement = this.$el.find('#interval-management');
       this.$fretBoard = this.$el.find('#fret-board');
       this.$controlBoard = this.$el.find('#control-board');
       this.$matchCountContainer = this.$el.find('#match-count-container');
@@ -71,8 +71,8 @@ define([
         el : this.$filteredList
       });
 
-      new AddIntervalView({
-        el : this.$addInterval
+      new IntervalManagementView({
+        el : this.$intervalManagement
       });
 
       new DescriptionView({

@@ -1,12 +1,12 @@
 
 define([
-  'AddIntervalModel',
-  'text!intervals/add/templates/add.tpl'
-], function (AddIntervalModel, template) {
+  'IntervalManagementModel',
+  'text!intervals/management/templates/management.tpl'
+], function (IntervalManagementModel, template) {
 
   "use strict";
 
-  var AddInterval = Backbone.View.extend({
+  var IntervalManagementForm = Backbone.View.extend({
 
     formEls : {},
     events : {
@@ -16,7 +16,7 @@ define([
     initialize : function (options) {
 
       this.options = options;
-      this.model = new AddIntervalModel();
+      this.model = new IntervalManagementModel();
 
       this.listenTo(this.model, 'validated', function (isValid, model, errors) {
         this.updateErrors(isValid, errors);
@@ -79,6 +79,6 @@ define([
 
   });
 
-  return AddInterval;
+  return IntervalManagementForm;
 
 });

@@ -5,7 +5,7 @@ function () {
 
   "use strict";
 
-  var AddIntervalModel = Backbone.Model.extend({
+  var IntervalManagementModel = Backbone.Model.extend({
 
     validation : {
       name : [{
@@ -22,5 +22,5 @@ function () {
       }]
     }
   });
-  return AddIntervalModel;
+  return IntervalManagementModel;
 });

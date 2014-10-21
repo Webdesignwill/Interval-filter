@@ -2,12 +2,12 @@
 define([
   'App',
   'IntervalsCollection',
-  'text!display/admin/intervals/templates/addInterval.tpl'
+  'text!display/admin/intervals/templates/intervalManagement.tpl'
 ], function (App, IntervalsCollection, template) {
 
   "use strict";
 
-  var AddInterval = Backbone.View.extend({
+  var IntervalManagement = Backbone.View.extend({
 
     initialize : function () {
       this.render();
@@ -18,8 +18,8 @@ define([
       this.$el.html(template);
 
       App.Forms.make({
-        name : 'AddInterval',
-        el : this.$el.find('#add-interval-form')
+        name : 'IntervalManagement',
+        el : this.$el.find('#interval-management-form')
       }, this.addInterval);
 
       return this;
@@ -37,6 +37,6 @@ define([
 
   });
 
-  return AddInterval;
+  return IntervalManagement;
 
 });

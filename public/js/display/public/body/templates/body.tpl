@@ -9,7 +9,7 @@
   <section class="match-content panel panel-default">
     <div id="match-count-container" class="panel-heading"></div>
     <div class="panel-body">
-      <div id="add-interval" class="add-interval admin-view well col-md-12"></div>
+      <div id="interval-management" class="interval-management admin-view well col-md-12"></div>
       <div id="filtered-list" class="filtered-list list-group col-md-6"></div>
       <div id="selection-description" class="selection-description col-md-6"></div>
     </div>

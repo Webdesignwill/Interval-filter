@@ -23,38 +23,38 @@ var base_require = require.config({
     App                                            : 'app',
 
     /* Public */
-    BodyView                                  : 'display/public/body/BodyView',
+    BodyView                                               : 'display/public/body/BodyView',
 
-    FretboardView                           : 'display/public/fretboard/FretboardView',
-    FretView                                    : 'display/public/fretboard/FretView',
-    FretModel                                  : 'display/public/fretboard/model/FretModel',
+    FretboardView                                        : 'display/public/fretboard/FretboardView',
+    FretView                                                 : 'display/public/fretboard/FretView',
+    FretModel                                               : 'display/public/fretboard/model/FretModel',
 
-    NavBarView                               : 'display/public/navbar/NavBarView',
+    NavBarView                                            : 'display/public/navbar/NavBarView',
 
-    MatchCountView                       : 'display/public/matchCount/MatchCountView',
-    ModalView                                 : 'display/public/modal/ModalView',
+    MatchCountView                                    : 'display/public/matchCount/MatchCountView',
+    ModalView                                              : 'display/public/modal/ModalView',
 
-    ListItemView                              : 'display/public/filteredList/ListItemView',
-    ListParentView                           : 'display/public/filteredList/ListParentView',
+    ListItemView                                           : 'display/public/filteredList/ListItemView',
+    ListParentView                                        : 'display/public/filteredList/ListParentView',
 
-    DescriptionView                        : 'display/public/description/DescriptionView',
+    DescriptionView                                     : 'display/public/description/DescriptionView',
 
-    ControlBoardView                      : 'display/public/controlBoard/ControlBoardView',
-    ButtonView                                : 'display/public/buttons/ButtonView',
+    ControlBoardView                                   : 'display/public/controlBoard/ControlBoardView',
+    ButtonView                                             : 'display/public/buttons/ButtonView',
 
-    IntervalsCollection                    : 'collections/IntervalsCollection',
-    SelectionCollection                   : 'collections/SelectionCollection',
+    IntervalsCollection                                 : 'collections/IntervalsCollection',
+    SelectionCollection                                : 'collections/SelectionCollection',
 
-    IntervalModel                            : 'models/IntervalModel',
-    UserModel                                 : 'models/UserModel',
-    Oauth2Model                             : 'models/Oauth2Model',
+    IntervalModel                                         : 'models/IntervalModel',
+    UserModel                                              : 'models/UserModel',
+    Oauth2Model                                          : 'models/Oauth2Model',
 
     /* Admin */
-    LoginView                                 : 'display/admin/user/LoginView',
-    RegisterView                             : 'display/admin/user/RegisterView',
-    ProfileView                                : 'display/admin/user/ProfileView',
+    LoginView                                              : 'display/admin/user/LoginView',
+    RegisterView                                          : 'display/admin/user/RegisterView',
+    ProfileView                                             : 'display/admin/user/ProfileView',
 
-    AddIntervalView                        : 'display/admin/intervals/AddIntervalView'
+    IntervalManagementView                        : 'display/admin/intervals/IntervalManagementView'
 
   },
   shim : {

@@ -1,2 +1,0 @@
-<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#add-interval-form">Toggle Add Interval <span class="glyphicon glyphicon-plus"></span></button>
-<div id="add-interval-form" class="collapse add-interval-form"></div>
