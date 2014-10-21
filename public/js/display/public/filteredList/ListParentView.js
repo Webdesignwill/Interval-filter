@@ -13,12 +13,18 @@ define([
     subViews : [],
 
     initialize : function () {
+
       this.listenTo(SelectionCollection, 'updated', function (model, options) {
         if(this.toggleNoResults()) return;
         this.clearSubViews();
       });
 
       this.listenTo(IntervalsCollection, 'add', function (model, options) {
+        if(this.toggleNoResults()) return;
+        this.clearSubViews();
+      }, this);
+
+      this.listenTo(IntervalsCollection, 'remove', function (model, options) {
         if(this.toggleNoResults()) return;
         this.clearSubViews();
       }, this);

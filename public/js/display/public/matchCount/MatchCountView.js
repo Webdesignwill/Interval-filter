@@ -14,6 +14,10 @@ define([
         this.updateMatchCount();
       }, this);
 
+      this.listenTo(IntervalsCollection, 'remove', function (model, options) {
+        this.updateMatchCount();
+      }, this);
+
       this.listenTo(IntervalsCollection, 'all', function (model, options) {
         this.updateTotalCount();
       }, this);

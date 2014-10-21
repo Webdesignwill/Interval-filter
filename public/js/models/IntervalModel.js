@@ -11,7 +11,8 @@ define([
 
     defaults : {
       selected : false,
-      match : false
+      match : false,
+      trash : false
     },
 
     initialize : function () {
@@ -31,6 +32,7 @@ define([
     },
 
     parse : function (object) {
+      object.id = object._id;
       object.displayNotes = object.notes;
       object.notes = this.parseNotes(object.notes);
       return object;

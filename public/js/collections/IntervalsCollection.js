@@ -65,7 +65,7 @@ define([
       });
     },
 
-    delete : function (done) {
+    delete : function (_id, done) {
       $.ajax({
         type : 'DELETE',
         context : this,
@@ -74,8 +74,9 @@ define([
         headers : {
           Authorization : 'Bearer ' + Oauth2Model.get('access_token')
         },
+        data : _id,
         success : function (data, status) {
-          this.clearUser();
+          this.remove(this.get(data._id));
           done(true, data, status);
         },
         error : function (data, status) {

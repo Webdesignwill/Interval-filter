@@ -20,7 +20,7 @@ module.exports = function (app) {
   ==================================== */
   app.get('/api/interval/all', Controllers.Interval.all);
   app.post('/api/interval/add', app.oauth.authorise(), Controllers.Interval.add);
-  app.put('/api/interval/update', Controllers.Interval.update);
-  app.delete('/api/interval/delete', Controllers.Interval.delete);
+  app.delete('/api/interval/delete', app.oauth.authorise(), Controllers.Interval.delete);
+  // app.put('/api/interval/update', Controllers.Interval.update);
 
 };

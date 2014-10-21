@@ -40,7 +40,7 @@ module.exports.delete = function (req, res, next) {
   Interval.findOne({ _id : req.body._id }, function (err, interval) {
     Interval.findByIdAndRemove(interval.id, function (err) {
       if (err) res.send(err);
-      res.send(200, {message : 'Deleted'});
+      res.send(200, interval);
     });
   });
 };

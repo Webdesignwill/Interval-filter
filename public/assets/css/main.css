@@ -93,6 +93,10 @@ body {
 .admin-view {
   display:none;
 }
+.interval-options {
+  position: relative;
+  top:7px;
+}
 
 body.loggedin .admin-view {
   display:block;
