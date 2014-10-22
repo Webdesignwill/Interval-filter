@@ -19,7 +19,7 @@ module.exports.all = function (req, res) {
   });
 };
 
-/* Update me a interval
+/* Update interval
 ============================= */
 module.exports.update = function (req, res, next) {
   Interval.findOne({ name : req.interval.id }, function (err, interval) {

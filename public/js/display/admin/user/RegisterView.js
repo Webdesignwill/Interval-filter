@@ -28,6 +28,7 @@ define([
         password : model.get('password')
       }, function (result, data, status) {
         if(result) {return App.$broker.trigger('modal:close'); }
+        console.log(data.responseText.split('at')[0].split(':')[1].trim());
       });
     },
 
