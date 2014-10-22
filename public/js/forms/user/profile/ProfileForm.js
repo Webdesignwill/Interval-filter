@@ -1,10 +1,9 @@
 
 define([
-  'Forms',
   'ProfileModel',
   'handlebars',
   'text!user/profile/templates/profile.tpl'
-], function (Forms, ProfileModel, handlebars, template) {
+], function (ProfileModel, handlebars, template) {
 
   "use strict";
 
@@ -16,9 +15,12 @@ define([
       'click .delete-user' : 'delete'
     },
 
-    initialize : function (options) {
+    initialize : function (options, validCallback) {
 
-      this.options = options;
+      this.display = options.display;
+      this.validCallback = validCallback;
+      this.serverModel = options.serverModel;
+
       this.model = new ProfileModel();
 
       this.listenTo(this.model, 'validated', function (isValid, model, errors) {
@@ -28,27 +30,27 @@ define([
     },
 
     render : function () {
-
       var tpl = handlebars.compile(template);
-      var compiled = tpl(Forms.get('User').attributes);
-
+      var compiled = tpl(this.display);
       this.$el.html(compiled);
-
       this.setFormEls();
       return this;
     },
 
     delete : function (e) {
       e.preventDefault();
-      Forms.get('User').deleteMe(function (result, data, status) {
-        if(result) {return Forms.get('$broker').trigger('modal:close'); }
+      var self = this;
+      this.serverModel.deleteMe(function (result, data, status) {
+        if(result) {return self.validCallback(false, Function); }
+        alert('USER WAS NOT DELETED');
       });
     },
 
     submit : function (e) {
       e.preventDefault();
+      var self = this;
 
-      var postData = {}, User = Forms.get('User'), val;
+      var postData = {}, User = this.serverModel, val;
       for(var key in this.formEls) {
         val = this.formEls[key].$formEl.val();
         postData[key] = !val ? User.get(key) : val;
@@ -57,8 +59,14 @@ define([
       this.model.set(postData, {validate : true});
 
       if(this.model.isValid()) {
-        this.options.callback(this.model);
+        this.validCallback(this.model, function (message) {
+          self.serverError(message);
+        });
       }
+    },
+
+    serverError : function (message) {
+      alert(message);
     },
 
     setFormEls : function () {
@@ -92,6 +100,12 @@ define([
         this.formEls[key].$formGroup[errors[key] ? 'addClass' : 'removeClass']('has-error');
         this.formEls[key].$label.html(errors[key] ? errors[key] : this.formEls[key].labelText);
       }
+    },
+
+    destroy : function () {
+      this.stopListening();
+      this.$el.off();
+      this.$el.empty();
     }
 
   });

@@ -1,40 +1,35 @@
 
 define([
-  'App'
-], function (App) {
+  'App',
+  'text!display/admin/user/templates/form.tpl'
+], function (App, template) {
 
   "use strict";
 
   var Profile = Backbone.View.extend({
 
-    initialize : function () {
+    initialize : function (options) {
+      this.options = options;
+      this.form = new App.Forms();
       this.render();
     },
 
     render : function () {
-
-      App.Forms.make({
+      this.$el.html(template);
+      this.form.init(App.User, {
         name : 'Profile',
-        el : this.$el
-      }, this.put);
-
+        action : 'put',
+        el : this.$el.find('form')
+      }, this.done);
       return this;
     },
 
-    put : function (model) {
-      App.User.put({
-        displayname : model.get('displayname'),
-        company : model.get('company'),
-        firstname : model.get('firstname'),
-        lastname : model.get('lastname')
-      }, function (result, data, status) {
-        if(result) {return App.$broker.trigger('modal:close'); }
-      });
+    done : function () {
+      App.$broker.trigger('modal:close');
     },
 
     close : function () {
-      this.$el.off();
-      this.$el.empty();
+      this.form.destroy();
     }
 
   });

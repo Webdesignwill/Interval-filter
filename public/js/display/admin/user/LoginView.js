@@ -1,7 +1,8 @@
 
 define([
-  'App'
-], function (App) {
+  'App',
+  'text!display/admin/user/templates/form.tpl'
+], function (App, template) {
 
   "use strict";
 
@@ -9,31 +10,26 @@ define([
 
     initialize : function (options) {
       this.options = options;
+      this.form = new App.Forms();
       this.render();
     },
 
     render : function () {
-      App.Forms.make({
+      this.$el.html(template);
+      this.form.init(App.User, {
         name : 'Login',
-        el : this.$el
-      }, this.login);
+        action : 'login',
+        el : this.$el.find('form')
+      }, this.done);
       return this;
     },
 
-    login : function (model) {
-      var self = this;
-      App.User.login({
-        email : model.get('email'),
-        password : model.get('password')
-      }, function (result, data, status) {
-        if(result) {return App.$broker.trigger('modal:close'); }
-        console.log(data.responseText.split('at')[0].split(':')[1].trim());
-      });
+    done : function () {
+      App.$broker.trigger('modal:close');
     },
 
     close : function () {
-      this.$el.off();
-      this.$el.empty();
+      this.form.destroy();
     }
 
   });

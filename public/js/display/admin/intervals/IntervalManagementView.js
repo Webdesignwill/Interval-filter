@@ -17,10 +17,10 @@ define([
 
       this.$el.html(template);
 
-      App.Forms.make({
-        name : 'IntervalManagement',
-        el : this.$el.find('#interval-management-form')
-      }, this.addInterval);
+      // App.Forms.make({
+      //   name : 'IntervalManagement',
+      //   el : this.$el.find('#interval-management-form')
+      // }, this.addInterval);
 
       return this;
     },

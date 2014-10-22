@@ -17,7 +17,7 @@ define([
         self.load(options);
       });
       App.$broker.on('modal:close', function (event) {
-        self.close();
+        self.$el.modal('hide');
       });
       this.$el.on('hidden.bs.modal', function (e) {
         self.close();
@@ -52,8 +52,8 @@ define([
     },
 
     close : function () {
-      if(this.subView.close) this.subView.close();
-      this.$el.modal('hide');
+      if(typeof this.subView.close === 'function') this.subView.close();
+      this.subView = {};
     }
   });
 

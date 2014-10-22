@@ -42,10 +42,6 @@ define([
         function load () {
           req(['Forms'], function (Forms) {
             self.Forms = Forms;
-            Forms.set({
-              User : self.User,
-              $broker : self.$broker
-            });
           });
         }
         var req = window.require(config(), function () {

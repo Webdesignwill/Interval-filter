@@ -1,40 +1,35 @@
 
 define([
-  'App'
-], function (App) {
+  'App',
+  'text!display/admin/user/templates/form.tpl'
+], function (App, template) {
 
   "use strict";
 
   var Register = Backbone.View.extend({
 
-    initialize : function () {
+    initialize : function (options) {
+      this.options = options;
+      this.form = new App.Forms();
       this.render();
     },
 
     render : function () {
-
-      App.Forms.make({
+      this.$el.html(template);
+      this.form.init(App.User, {
         name : 'Register',
-        el : this.$el
-      }, this.register);
-
+        action : 'register',
+        el : this.$el.find('form')
+      }, this.done);
       return this;
     },
 
-    register : function (model) {
-      App.User.register({
-        email : model.get('email'),
-        displayname : model.get('displayname'),
-        password : model.get('password')
-      }, function (result, data, status) {
-        if(result) {return App.$broker.trigger('modal:close'); }
-        console.log(data.responseText.split('at')[0].split(':')[1].trim());
-      });
+    done : function () {
+      App.$broker.trigger('modal:close');
     },
 
     close : function () {
-      this.$el.off();
-      this.$el.empty();
+      this.form.destroy();
     }
 
   });

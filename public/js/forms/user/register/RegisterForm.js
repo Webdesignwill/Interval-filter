@@ -1,8 +1,9 @@
 
 define([
   'RegisterModel',
+  'handlebars',
   'text!user/register/templates/register.tpl'
-], function (RegisterModel, template) {
+], function (RegisterModel, handlebars, template) {
 
   "use strict";
 
@@ -13,9 +14,12 @@ define([
       'submit' : 'submit'
     },
 
-    initialize : function (options) {
+    initialize : function (options, validCallback) {
 
-      this.options = options;
+      this.display = options.display;
+      this.validCallback = validCallback;
+      this.serverModel = options.serverModel;
+
       this.model = new RegisterModel();
 
       this.listenTo(this.model, 'validated', function (isValid, model, errors) {
@@ -25,13 +29,16 @@ define([
     },
 
     render : function () {
-      this.$el.html(template);
+      var tpl = handlebars.compile(template);
+      var compiled = tpl(this.display);
+      this.$el.html(compiled);
       this.setFormEls();
       return this;
     },
 
     submit : function (e) {
       e.preventDefault();
+      var self = this;
 
       this.model.set({
         email : this.formEls.email.$formEl.val(),
@@ -41,8 +48,14 @@ define([
       }, {validate : true});
 
       if(this.model.isValid()) {
-        this.options.callback(this.model);
+        this.validCallback(this.model, function (message) {
+          self.serverError(message);
+        });
       }
+    },
+
+    serverError : function (message) {
+      alert(message);
     },
 
     setFormEls : function () {
@@ -76,6 +89,12 @@ define([
         this.formEls[key].$formGroup[errors[key] ? 'addClass' : 'removeClass']('has-error');
         this.formEls[key].$label.html(errors[key] ? errors[key] : this.formEls[key].labelText);
       }
+    },
+
+    destroy : function () {
+      this.stopListening();
+      this.$el.off();
+      this.$el.empty();
     }
 
   });
