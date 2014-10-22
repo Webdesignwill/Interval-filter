@@ -9,30 +9,28 @@ define([
 
   var IntervalManagement = Backbone.View.extend({
 
-    initialize : function () {
+    initialize : function (options) {
+      this.options = options;
+      this.form = new App.Forms();
       this.render();
     },
 
     render : function () {
-
       this.$el.html(template);
-
-      // App.Forms.make({
-      //   name : 'IntervalManagement',
-      //   el : this.$el.find('#interval-management-form')
-      // }, this.addInterval);
-
+      this.form.init(IntervalsCollection, {
+        name : 'IntervalManagement',
+        action : 'addInterval',
+        el : this.$el.find('form')
+      }, this.done);
       return this;
     },
 
-    addInterval : function (model) {
-      IntervalsCollection.addInterval({
-        name : model.get('name'),
-        notes : model.get('notes'),
-        description : model.get('description')
-      }, function (result, data, status) {
-        if(result) {return; }
-      });
+    done : function () {
+      App.$broker.trigger('modal:close');
+    },
+
+    close : function () {
+      this.form.destroy();
     }
 
   });
