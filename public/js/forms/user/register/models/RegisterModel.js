@@ -7,6 +7,10 @@ function () {
 
   var RegisterModel = Backbone.Model.extend({
 
+    urls : {
+      email : '/api/user/unique',
+    },
+
     validation : {
       email : [{
         required : true,
@@ -16,7 +20,7 @@ function () {
         msg : 'Please enter a valid email'
       },{
         unique : true,
-        msg : 'This email is already taken'
+        msg : 'This email is already registered'
       }],
       displayname : [{
         required : true,

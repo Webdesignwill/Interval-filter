@@ -66,7 +66,8 @@ define([
 
       var validation = this.model.validation,
             $el,
-            validatables = [];
+            validatables = [],
+            self = this;
 
       for(var key in validation) {
         $el = this.$el.find('[name="' + key + '"]');

@@ -73,29 +73,28 @@ var base_require = require.config({
   deps : ['jquery', 'underscore', 'App', 'domReady', 'bootstrap', 'Validation'],
   callback : function ($, _, App, domReady) {
 
-    // Mix in the validation for all models
+    // Mix in the validation for all models. Do something with this
+    // cause it can't very well go here
     _.extend(Backbone.Model.prototype, Backbone.Validation.mixin);
+    _.extend(Backbone.Validation.validators, {
+      unique: function(value, attr, customValue, model) {
 
-    // _.extend(Backbone.Validation.validators, {
-    //   myValidator: function(value, attr, customValue, model) {
-    //     if(value !== customValue){
-    //       return 'error';
-    //     }
-    //   },
-    //   required: function(value, attr, customValue, model) {
-    //     if(!value){
-    //       return 'My version of the required validator';
-    //     }
-    //   },
-    // });
+        var req = {};
+        req[attr] = value;
 
-    // var Model = Backbone.Model.extend({
-    //   validation: {
-    //     age: {
-    //       myValidator: 1 // uses your custom validator
-    //     }
-    //   }
-    // });
+        if(!this.required(value, attr, customValue, model)) {
+          reqProps = {
+            type : 'POST',
+            async: false,
+            context : this,
+            url : model.urls[attr],
+            contentType : 'application/x-www-form-urlencoded',
+            data : req
+          };
+          return $.ajax(reqProps).status === 200 ? false : true;
+        }
+      }
+    });
 
     domReady(function() {
       App.init();

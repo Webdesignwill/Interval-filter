@@ -44,6 +44,16 @@ module.exports.register = function (req, res, next) {
   });
 };
 
+/* See if the email exists
+============================= */
+module.exports.unique = function (req, res, next) {
+  User.findOne({ email : req.body.email }, function (err, user) {
+    if (err) res.send(err);
+    var statusCode = user ? 500 : 200;
+    res.send(statusCode);
+  });
+};
+
 /* Get me as the user
 ============================= */
 module.exports.getMe = function (req, res, next) {

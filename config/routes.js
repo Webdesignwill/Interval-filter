@@ -9,6 +9,7 @@ module.exports = function (app) {
 
   /* User
   ==================================== */
+  app.post('/api/user/unique', Controllers.User.unique);
   app.post('/api/user/session', Controllers.User.session);
   app.post('/api/user/register', Controllers.User.register);
   app.get('/api/user/me', app.oauth.authorise(), Controllers.User.getMe);
