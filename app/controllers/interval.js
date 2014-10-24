@@ -19,6 +19,16 @@ module.exports.all = function (req, res) {
   });
 };
 
+/* See if the interval exists
+============================= */
+module.exports.unique = function (req, res, next) {
+  Interval.findOne({ name : req.body.name }, function (err, user) {
+    if (err) res.send(err);
+    var statusCode = user ? 500 : 200;
+    res.send(statusCode);
+  });
+};
+
 /* Update interval
 ============================= */
 module.exports.update = function (req, res, next) {
