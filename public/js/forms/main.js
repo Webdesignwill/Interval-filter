@@ -9,18 +9,13 @@ define(function (require, exports, module) {
         handlebars                                                 : '../libs/handlebars/handlebars',
 
         Forms                                                         : 'Forms',
+        FormView                                                   : 'FormView',
 
         // User
-        LoginForm                                                   : 'user/login/LoginForm',
-        LoginModel                                                 : 'user/login/models/LoginModel',
-        ProfileForm                                                 : 'user/profile/ProfileForm',
-        ProfileModel                                                : 'user/profile/models/ProfileModel',
-        RegisterForm                                               : 'user/register/RegisterForm',
-        RegisterModel                                              : 'user/register/models/RegisterModel',
-
-        // Intervals
-        IntervalManagementForm                            : 'intervals/management/IntervalManagementForm',
-        IntervalManagementModel                          : 'intervals/management/models/IntervalManagementModel'
+        LoginModel                                                 : 'models/LoginModel',
+        ProfileModel                                                : 'models/ProfileModel',
+        RegisterModel                                              : 'models/RegisterModel',
+        IntervalManagementModel                          : 'models/IntervalManagementModel'
       },
       deps : ['Forms']
     };

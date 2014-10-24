@@ -7,10 +7,6 @@ define([
 
   var Forms = Backbone.Model.extend({
 
-    model : {},
-    done : Function,
-    form : {},
-
     init : function (model, options, done) {
       this.model = model;
       this.action = options.action;
@@ -21,8 +17,9 @@ define([
 
     loadForm : function (options) {
       var self = this;
-      require([options.name + 'Form'], function (Form) {
-        self.form = new Form({
+      require(['FormView'], function (FormView) {
+        self.formView = new FormView({
+          name : options.name,
           el : options.el,
           serverModel : self.model,
           display : self.model.attributes
@@ -43,11 +40,11 @@ define([
     },
 
     destroy : function () {
-      this.form.destroy();
+      this.formView.destroy();
     },
 
     clear : function () {
-      this.form.clear();
+      this.formView.clear();
     }
 
   });
