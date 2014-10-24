@@ -36,14 +36,20 @@ define([
       return this;
     },
 
+    parseSet : function (persist) {
+      var key, props = {}, val;
+      for(key in this.formEls) {
+        val = this.formEls[key].$formEl.val();
+        props[key] = persist && !val ? this.serverModel.get(key) : val;
+      }
+      return props;
+    },
+
     submit : function (e) {
       e.preventDefault();
       var self = this;
 
-      this.model.set({
-        email : this.formEls.email.$formEl.val(),
-        password : this.formEls.password.$formEl.val()
-      }, {validate : true});
+      this.model.set(this.parseSet(this.model.get('persist')), {validate : true});
 
       if(this.model.isValid()) {
         this.validCallback(this.model, function (message) {
@@ -86,6 +92,12 @@ define([
       for(var key in this.formEls) {
         this.formEls[key].$formGroup[errors[key] ? 'addClass' : 'removeClass']('has-error');
         this.formEls[key].$label.html(errors[key] ? errors[key] : this.formEls[key].labelText);
+      }
+    },
+
+    clear : function () {
+      for(var key in this.formEls) {
+        this.formEls[key].$formEl.val('');
       }
     },
 

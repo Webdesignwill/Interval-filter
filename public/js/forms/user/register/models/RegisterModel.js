@@ -14,6 +14,9 @@ function () {
       },{
         pattern : 'email',
         msg : 'Please enter a valid email'
+      },{
+        unique : true,
+        msg : 'This email is already taken'
       }],
       displayname : [{
         required : true,

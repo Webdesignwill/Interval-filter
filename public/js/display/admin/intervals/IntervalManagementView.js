@@ -17,16 +17,17 @@ define([
 
     render : function () {
       this.$el.html(template);
+      var self = this;
       this.form.init(IntervalsCollection, {
         name : 'IntervalManagement',
         action : 'addInterval',
         el : this.$el.find('form')
-      }, this.done);
+      }, function () { self.done(); });
       return this;
     },
 
     done : function () {
-      App.$broker.trigger('modal:close');
+      this.form.clear();
     },
 
     close : function () {

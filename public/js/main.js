@@ -76,6 +76,27 @@ var base_require = require.config({
     // Mix in the validation for all models
     _.extend(Backbone.Model.prototype, Backbone.Validation.mixin);
 
+    // _.extend(Backbone.Validation.validators, {
+    //   myValidator: function(value, attr, customValue, model) {
+    //     if(value !== customValue){
+    //       return 'error';
+    //     }
+    //   },
+    //   required: function(value, attr, customValue, model) {
+    //     if(!value){
+    //       return 'My version of the required validator';
+    //     }
+    //   },
+    // });
+
+    // var Model = Backbone.Model.extend({
+    //   validation: {
+    //     age: {
+    //       myValidator: 1 // uses your custom validator
+    //     }
+    //   }
+    // });
+
     domReady(function() {
       App.init();
     });

@@ -16,11 +16,12 @@ define([
 
     render : function () {
       this.$el.html(template);
+      var self = this;
       this.form.init(App.User, {
         name : 'Register',
         action : 'register',
         el : this.$el.find('form')
-      }, this.done);
+      }, function () { self.done(); });
       return this;
     },
 

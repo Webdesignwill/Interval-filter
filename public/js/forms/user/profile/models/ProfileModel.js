@@ -6,6 +6,9 @@ function () {
   "use strict";
 
   var ProfileModel = Backbone.Model.extend({
+
+    defaults : { persist : true },
+
     validation : {
       displayname : [{
         required : false,

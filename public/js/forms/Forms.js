@@ -26,7 +26,7 @@ define([
           el : options.el,
           serverModel : self.model,
           display : self.model.attributes
-        }, function valid (validatedModel, invalid) {
+        }, function validCallback (validatedModel, invalid) {
           self.formValid(validatedModel, invalid);
         });
       });
@@ -44,6 +44,10 @@ define([
 
     destroy : function () {
       this.form.destroy();
+    },
+
+    clear : function () {
+      this.form.clear();
     }
 
   });
