@@ -39,8 +39,8 @@ define([
     },
 
     loadTemplate : function (name) {
-      var self = this;
-      this.loader({ load : 'text!templates/' + name.toLowerCase() + '.tpl'}, function (template) {
+      var self = this; name = name.toLowerCase();
+      this.loader({ load : 'text!types/' + name + '/' + name + '.tpl'}, function (template) {
         self.render(template);
       });
     },
