@@ -19,7 +19,7 @@ define([
       this.$el.html(template);
       var self = this;
       this.form.init(IntervalsCollection, {
-        name : 'IntervalManagement',
+        name : 'Interval',
         action : 'addInterval',
         el : this.$el.find('form')
       }, function () { self.done(); });

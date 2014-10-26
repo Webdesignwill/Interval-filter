@@ -12,10 +12,10 @@ define(function (require, exports, module) {
         FormView                                                   : 'FormView',
 
         // User
-        LoginModel                                                 : 'types/login/LoginModel',
-        ProfileModel                                                : 'types/profile/ProfileModel',
-        RegisterModel                                              : 'types/register/RegisterModel',
-        IntervalManagementModel                          : 'types/intervalManagement/IntervalManagementModel'
+        LoginModel                                                 : 'login/LoginModel',
+        ProfileModel                                                : 'profile/ProfileModel',
+        RegisterModel                                              : 'register/RegisterModel',
+        IntervalModel                                               : 'interval/IntervalModel'
       },
       deps : ['Forms']
     };

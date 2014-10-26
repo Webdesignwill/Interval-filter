@@ -5,7 +5,7 @@ function () {
 
   "use strict";
 
-  var IntervalManagementModel = Backbone.Model.extend({
+  var Interval = Backbone.Model.extend({
 
     urls : { name : '/api/interval/unique' },
 
@@ -27,5 +27,5 @@ function () {
       }]
     }
   });
-  return IntervalManagementModel;
+  return Interval;
 });

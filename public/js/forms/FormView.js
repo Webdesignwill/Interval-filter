@@ -40,7 +40,7 @@ define([
 
     loadTemplate : function (name) {
       var self = this; name = name.toLowerCase();
-      this.loader({ load : 'text!types/' + name + '/' + name + '.tpl'}, function (template) {
+      this.loader({ load : 'text!' + name + '/' + name + '.tpl'}, function (template) {
         self.render(template);
       });
     },
