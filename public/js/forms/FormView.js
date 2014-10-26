@@ -13,11 +13,11 @@ define([
     },
 
     initialize : function (options, validCallback) {
-      this.formEls = {};
+      this.$form = {};
 
       this.display = options.display;
       this.validCallback = validCallback;
-      this.serverModel = options.serverModel;
+      this.model = options.serverModel;
 
       var self = this;
       this.loadModel(options.name, function (name) {
@@ -28,10 +28,10 @@ define([
     loadModel : function (name, callback) {
       var self = this;
       this.loader({ load : name + 'Model' }, function (Model) {
-        self.model = new Model();
+        self.validationModel = new Model();
 
-        self.listenTo(self.model, 'validated', function (isValid, model, errors) {
-          self.updateErrors(isValid, errors);
+        self.listenTo(self.validationModel, 'validated', function (isValid, model, errors) {
+          self.toggleAll(errors);
         });
 
         callback(name);
@@ -56,39 +56,65 @@ define([
       var tpl = handlebars.compile(template);
       var compiled = tpl(this.display);
       this.$el.html(compiled);
-      this.setFormEls();
+      this.initValidation();
       return this;
     },
 
-    setFormEls : function () {
-      var validation = this.model.validation,
-            $el,
-            validatables = [];
+    initValidation : function () {
+      var self = this, vali = this.validationModel.validation;
 
-      for(var key in validation) {
-        $el = this.$el.find('[name="' + key + '"]');
-        if($el) validatables.push($el);
+      function isValidatedElement (key) {
+        return self.$el.find('[name="' + key + '"]');
       }
 
-      for(var i = 0; i<validatables.length; i++) {
-        var $validatable = $(validatables[i]),
-              $formGroup = $validatable.closest('.form-group'),
-              $label = $validatable.prev('label');
+       function hasValidationProperty (key, prop) {
+        for(var i = 0;i<vali[key].length;i++) {
+          if(vali[key][i][prop]) return true;
+        }
+        return false;
+      }
 
-        this.formEls[$validatable.attr('name')] = {
-          $formEl : $validatable,
+      function mapValidationObjects (key) {
+        var $formGroup = $Vel.closest('.form-group'),
+              $label = $Vel.prev('label');
+
+        self.$form[key] = {
+          $Vel : $Vel,
           $label : $label,
+          $formGroup : $formGroup,
           labelText : $label.html(),
-          $formGroup : $formGroup
+          unique : hasValidationProperty(key, 'unique')
         };
+      }
+
+      function setEvent (key) {
+        var form = self.$form[key], msg;
+        form.$Vel.on('blur', function () {
+          msg = self.validationModel.preValidate(key, form.$Vel.val());
+          if(!msg) {
+            self.validationModel.set(form.$Vel.val());
+            self.toggleValid(form, false);
+          }
+          if(form.unique && form.$Vel.val()) {
+            self.toggleValid(form, msg);
+          }
+        });
+      }
+
+      for(var key in vali) {
+        var $Vel = isValidatedElement(key);
+        if($Vel) {
+          mapValidationObjects(key);
+          setEvent(key);
+        }
       }
     },
 
     parseSet : function (persist) {
       var key, props = {}, val;
-      for(key in this.formEls) {
-        val = this.formEls[key].$formEl.val();
-        props[key] = persist && !val ? this.serverModel.get(key) : val;
+      for(key in this.$form) {
+        val = this.$form[key].$Vel.val();
+        props[key] = persist && !val ? this.model.get(key) : val;
       }
       return props;
     },
@@ -97,10 +123,10 @@ define([
       e.preventDefault();
       var self = this;
 
-      this.model.set(this.parseSet(this.model.get('persist')), {validate : true});
+      this.validationModel.set(this.parseSet(this.validationModel.get('persist')), {validate : true});
 
-      if(this.model.isValid()) {
-        this.validCallback(this.model, function (message) {
+      if(this.validationModel.isValid()) {
+        this.validCallback(this.validationModel, function (message) {
           self.serverError(message);
         });
       }
@@ -110,21 +136,25 @@ define([
       alert(message);
     },
 
-    updateErrors : function (isValid, errors) {
-      this.$el[!isValid ? 'addClass' : 'removeClass']('invalid');
-      for(var key in this.formEls) {
-        this.formEls[key].$formGroup[errors[key] ? 'addClass' : 'removeClass']('has-error');
-        this.formEls[key].$label.html(errors[key] ? errors[key] : this.formEls[key].labelText);
+    toggleAll : function (errors) {
+      for(var key in this.$form) {
+        this.toggleValid(this.$form[key], errors[key]);
       }
     },
 
+    toggleValid : function (formProp, err) {
+      formProp.$formGroup[err ? 'addClass' : 'removeClass']('has-error');
+      formProp.$label.html(err ? err : formProp.labelText);
+    },
+
     clear : function () {
-      for(var key in this.formEls) {
-        this.formEls[key].$formEl.val('');
+      for(var key in this.$form) {
+        this.$form[key].$Vel.val('');
       }
     },
 
     destroy : function () {
+      this.form = {};
       this.stopListening();
       this.$el.off();
       this.$el.empty();

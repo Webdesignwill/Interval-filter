@@ -33,10 +33,10 @@ function () {
       }],
       confirmpassword : [{
         required : true,
-        msg : 'Please confirm your password'
+        msg : 'Please re enter your password'
       },{
         equalTo : 'password',
-        msg : 'This field should match the password field'
+        msg : 'This should match your password'
       }]
     }
   });
