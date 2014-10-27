@@ -39,7 +39,6 @@ module.exports.session = function (req, res, next) {
 module.exports.register = function (req, res, next) {
   User.register(req.body, function (err, user) {
     if (err) return next(err);
-    // if (err) return next(errors[err.code]);
     res.send(200);
   });
 };

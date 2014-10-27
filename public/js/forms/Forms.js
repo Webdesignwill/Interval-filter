@@ -23,19 +23,20 @@ define([
           el : options.el,
           serverModel : self.model,
           displayModel : self.model.attributes
-        }, function validCallback (validatedModel, invalid) {
-          self.formValid(validatedModel, invalid);
         });
+
+        self.listenTo(self.formView, 'valid', function (opts) {
+          self.formValid(opts.validationModel);
+        }, self);
+
       });
     },
 
-    formValid : function (validatedModel, invalid) {
-      if(!validatedModel) return this.done();
-
+    formValid : function (validationModel) {
       var self = this;
-      this.model[this.action](validatedModel.attributes, function (result, data, status) {
+      this.model[this.action](validationModel.attributes, function (result, data, status) {
         if(result) { return self.done(); }
-        invalid('Something went wrong');
+        alert('TODO : Server Errors');
       });
     },
 

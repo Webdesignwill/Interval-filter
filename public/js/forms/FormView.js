@@ -12,11 +12,10 @@ define([
       'submit' : 'submit'
     },
 
-    initialize : function (options, validCallback) {
+    initialize : function (options) {
       this.$form = {};
 
       this.displayModel = options.displayModel;
-      this.validCallback = validCallback;
       this.model = options.serverModel;
 
       var self = this;
@@ -126,14 +125,10 @@ define([
       this.validationModel.set(this.parseSet(this.validationModel.persist), {validate : true});
 
       if(this.validationModel.isValid()) {
-        this.validCallback(this.validationModel, function (message) {
-          self.serverError(message);
+        this.trigger('valid', {
+          validationModel : this.validationModel
         });
       }
-    },
-
-    serverError : function (message) {
-      alert(message);
     },
 
     toggleAll : function (errors) {
