@@ -123,7 +123,7 @@ define([
       e.preventDefault();
       var self = this;
 
-      this.validationModel.set(this.parseSet(this.validationModel.get('persist')), {validate : true});
+      this.validationModel.set(this.parseSet(this.validationModel.persist), {validate : true});
 
       if(this.validationModel.isValid()) {
         this.validCallback(this.validationModel, function (message) {

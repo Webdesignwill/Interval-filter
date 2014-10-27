@@ -7,7 +7,7 @@ function () {
 
   var ProfileModel = Backbone.Model.extend({
 
-    defaults : { persist : true },
+    persist : true,
 
     validation : {
       displayname : [{
