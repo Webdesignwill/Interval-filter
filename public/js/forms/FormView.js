@@ -92,7 +92,7 @@ define([
         form.$Vel.on('blur', function () {
           msg = self.validationModel.preValidate(key, form.$Vel.val());
           if(!msg) {
-            self.validationModel.set(form.$Vel.val());
+            self.validationModel.set(key, form.$Vel.val());
             self.toggleValid(form, false);
           }
           if(form.unique && form.$Vel.val()) {
