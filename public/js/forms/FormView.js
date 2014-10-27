@@ -67,7 +67,7 @@ define([
         return self.$el.find('[name="' + key + '"]');
       }
 
-       function hasValidationProperty (key, prop) {
+      function hasValidationProperty (key, prop) {
         for(var i = 0;i<vali[key].length;i++) {
           if(vali[key][i][prop]) return true;
         }
