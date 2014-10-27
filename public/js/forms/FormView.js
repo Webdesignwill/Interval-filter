@@ -15,7 +15,7 @@ define([
     initialize : function (options, validCallback) {
       this.$form = {};
 
-      this.display = options.display;
+      this.displayModel = options.displayModel;
       this.validCallback = validCallback;
       this.model = options.serverModel;
 
@@ -54,7 +54,7 @@ define([
 
     render : function (template) {
       var tpl = handlebars.compile(template);
-      var compiled = tpl(this.display);
+      var compiled = tpl(this.displayModel);
       this.$el.html(compiled);
       this.initValidation();
       return this;

@@ -22,7 +22,7 @@ define([
           name : options.name,
           el : options.el,
           serverModel : self.model,
-          display : self.model.attributes
+          displayModel : self.model.attributes
         }, function validCallback (validatedModel, invalid) {
           self.formValid(validatedModel, invalid);
         });
