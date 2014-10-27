@@ -17,7 +17,7 @@
     <input type="text" class="form-control" id="lastname-field" name="lastname" placeholder="{{lastname}}" />
   </div>
   <div class="form-group">
-    <button class="pull-left btn btn-danger delete-user">Delete {{displayname}}</button>
+    <!-- <a class="pull-left btn btn-danger delete-user">Delete {{displayname}}</a> -->
     <button type="submit" class="pull-right btn btn-primary">Submit</button>
   </div>
 </form>
