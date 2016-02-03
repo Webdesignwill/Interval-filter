@@ -1,0 +1,103 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color : #555555;
+}
+.navbar {
+  margin-bottom:0;
+}
+.list-group {
+  margin-bottom:0;
+}
+.clear:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+.interval ul.fret-board {
+  height:150px;
+  margin-bottom:0;
+}
+.interval .fret-board li {
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  height:100%;
+  font-size:20px;
+  text-align:center;
+}
+.interval .fret-board li .interval{
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  height:100%;
+  width:100%;
+  position:relative;
+  top:40%;
+}
+.interval .fret-board li:hover {
+  background:#d9edf7;
+  cursor: pointer;
+}
+.interval .fret-board li:hover .interval {
+  color : #000000;
+}
+.interval .fret-board li.selected .interval {
+  color : #000000;
+}
+.interval .fret-board .highlight {
+  background:#dff0d8;
+}
+.interval .fret-board .selected {
+  background:#d9edf7;
+}
+.match-content {
+  z-index:0;
+}
+.match-content .filtered-list {
+  cursor:pointer;
+}
+.match-content .filtered-list a {
+  text-decoration:none;
+}
+.match-content .filtered-list h3, .match-content .filtered-list p {
+  margin:0;
+  padding:0;
+}
+.selection-description h3 {
+  margin-top:0;
+}
+.control-board button {
+  margin-right:5px;
+}
+.selection-description h3 {
+  margin-top:0;
+}
+
+/* Admin stuff */
+.interval-management {
+  margin-bottom:10px;
+}
+.interval-management-form {
+  margin-top:15px;
+}
+.admin-view {
+  display:none;
+}
+.interval-options {
+  position: relative;
+  top:7px;
+}
+
+body.loggedin .admin-view {
+  display:block;
+}
